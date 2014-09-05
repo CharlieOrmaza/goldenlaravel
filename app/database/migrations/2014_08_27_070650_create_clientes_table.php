@@ -20,6 +20,7 @@ class CreateClientesTable extends Migration {
 			$table->string('email');
 			$table->date('fechaDeNacimiento');
 			$table->string('referencia');
+			$table->string('pasaporte');
 			$table->timestamps();
 		});
 	}

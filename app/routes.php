@@ -12,29 +12,17 @@
 */
 
 
-
-
+Route::post('clientes/update/{id}','ClientesController@update');
+Route::post('clientes/store','ClientesController@store');
 Route::get('clientes/show/{id}','ClientesController@show');
 Route::get('clientes/edit/{id}','ClientesController@edit');
 Route::get('clientes/destroy/{id}','ClientesController@destroy');
 
 Route::resource('clientes', 'ClientesController');
 
-Route::get('/', function()
-{
-	return View::make('pages.home');
-});
-Route::get('about', function()
-{
-	return View::make('pages.about');
-});
-Route::get('projects', function()
-{
-	return View::make('pages.projects');
-});
-Route::get('contact', function()
-{
-	return View::make('pages.contact');
-});
 
-Route::resource('reservaciones', 'ReservacionesController');
+Route::resource('hoteles', 'HotelsController');
+
+Route::resource('consultas', 'ConsultasController');
+
+Route::resource('pagos', 'PagosController');

@@ -23,7 +23,9 @@ class ClientesController extends BaseController {
 	 */
 	public function create()
 	{
+        
         return View::make('clientes.create');
+
 	}
 
 	/**
@@ -33,7 +35,25 @@ class ClientesController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$cliente = new Cliente;
+
+		$cliente->nombre = Input::get('nombre');
+		$cliente->direccion = Input::get('direccion');
+		$cliente->telefono = Input::get('telefono');
+		$cliente->email = Input::get('email');
+		$cliente->fechaDeNacimiento = Input::get('fechaDeNacimiento');
+		$cliente->referencia = Input::get('referencia');
+		$cliente->pasaporte = Input::get('pasaporte');
+
+		if ($cliente->save()) {
+			Session::flash('message','Guardado correctamente!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+
+		return Redirect::to('clientes/create');
 	}
 
 	/**
@@ -42,9 +62,11 @@ class ClientesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id = null)
 	{
-        return View::make('clientes.show');
+        $cliente = Cliente::find($id);
+
+		return View::make('clientes.show')->with('cliente',$cliente);
 	}
 
 	/**
@@ -53,9 +75,11 @@ class ClientesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id = null)
 	{
-        return View::make('clientes.edit');
+        $cliente = Cliente::find($id);
+
+		return View::make('clientes.edit')->with('cliente',$cliente);
 	}
 
 	/**
@@ -66,7 +90,25 @@ class ClientesController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$cliente = Cliente::find($id);
+
+		$cliente->nombre = Input::get('nombre');
+		$cliente->direccion = Input::get('direccion');
+		$cliente->telefono = Input::get('telefono');
+		$cliente->email = Input::get('email');
+		$cliente->fechaDeNacimiento = Input::get('fechaDeNacimiento');
+		$cliente->referencia = Input::get('referencia');
+		$cliente->pasaporte = Input::get('pasaporte');
+
+		if ($cliente->save()) {
+			Session::flash('message','Actualizado correctamente!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+
+		return Redirect::to('clientes/edit/'.$id);
 	}
 
 	/**
@@ -77,7 +119,17 @@ class ClientesController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$cliente = Cliente::find($id);
+
+		if ($cliente->delete()) {
+			Session::flash('message','Eliminado correctamente!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+
+		return Redirect::to('clientes');
 	}
 
 }
