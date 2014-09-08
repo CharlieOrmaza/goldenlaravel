@@ -25,4 +25,6 @@ Route::resource('hoteles', 'HotelsController');
 
 Route::resource('consultas', 'ConsultasController');
 
+Route::post('pagos/store/{papeleta}','PagosController@store');
+Route::get('pagos/nuevo/{papeleta?}','pagosController@create');
 Route::resource('pagos', 'PagosController');

@@ -36,7 +36,7 @@
 		          	<input type="submit" value="Actualizar" class="btn btn-success">
           	@else
 	          	<p>
-	            	No existe información para éste Cliente.
+	            	No existe información para este Cliente.
 	          	</p>
           	@endif
         		<a href="/clientes" class="btn btn-default">Regresar</a>

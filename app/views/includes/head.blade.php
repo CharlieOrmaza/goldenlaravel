@@ -6,15 +6,16 @@
 
 
 <!-- jQuery -->
-<script type="text/javascript" charset="utf8" src="../dataTables/js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>
 
 <!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="../dataTables/css/jquery.dataTables.css">
-<link rel="stylesheet" type="text/css" href="../dataTables/TableTools/css/dataTables.tableTools.css">
+<link rel="stylesheet" type="text/css" href="/dataTables/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="/dataTables/TableTools/css/dataTables.tableTools.css">
   
 <!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="../dataTables/js/jquery.dataTables.js"></script>
-<script type="text/javascript" charset="utf8" src="../dataTables/TableTools/js/dataTables.tableTools.js"></script>
+<script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="/dataTables/TableTools/js/dataTables.tableTools.js"></script>
 
 
 <script type="text/javascript">
@@ -33,12 +34,16 @@
 	body {
 		width: 80%;
 		margin: 20px auto;
+		background: rgba(255,255,255,0.1);
+	}
+	body h1{
+		color: white;
 	}
 	.badge {
 		float: right;
 	}
 	html{
-		background-image: url('/img/background.jpg');
+		background-image: url('/img/fondos/background2.jpg');
 	}
 </style>
 	

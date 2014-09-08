@@ -17,8 +17,10 @@ class CreatePagosTable extends Migration {
 			$table->increments('id');
 			$table->string('papeleta');
 			$table->string('cantidad');
-			$table->string('tipo');
+			$table->string('pagoDe');
+			$table->string('formaDePago');
 			$table->string('tarjeta');
+			$table->string('usuario');
 			$table->timestamps();
 		});
 	}
