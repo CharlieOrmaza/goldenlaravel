@@ -43,7 +43,23 @@ class PagosController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$pagos = new Pago;
+
+		$pagos->cantidad = Input::get('cantidad');
+		$pagos->formaDePago = Input::get('formaDePago');
+		$pagos->tarjeta = Input::get('tarjeta');
+		$pagos->pagoDe = Input::get('tipoDePago');
+		
+
+		if ($pagos->save()) {
+			Session::flash('message','Pago Guardado correctamente!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+
+		return Redirect::to('pagos/create');
 	}
 
 	/**

@@ -37,7 +37,9 @@
 </script>
 
 	<h1>Pagos</h1>
-
+	@if(Session::has('message'))
+	    <div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
+	@endif
 	<div class="panel panel-success">
   		<div class="panel-heading">
   			<h4>Datos Papeleta</h4>
@@ -224,7 +226,5 @@
 
 
 
-	@if(Session::has('message'))
-	    <div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
-	@endif
+	
 @stop

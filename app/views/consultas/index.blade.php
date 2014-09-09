@@ -21,8 +21,7 @@
 						<th>Tiempo Limite</th>
 						<th>Tipo</th>
 						<th>Estado</th>
-						<th>Acciones</th>
-						<th>Saldo Pendiente</th>			
+						<th>Acciones</th>				
 					</tr>
 				</thead>
 				<tbody>
