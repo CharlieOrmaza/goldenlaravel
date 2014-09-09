@@ -25,7 +25,7 @@
 					</tr>
 				</thead>
 				<tbody>
-
+				@if (!empty($consultas))
 					@foreach($consultas as $consulta)
 					{{$miTipo='';}}
 						<tr>
@@ -48,6 +48,11 @@
 							</td>
 						</tr>
 					@endforeach
+			@else
+	          	<tr><th colspan="5">
+	            	No existe información en esta consulta.
+	          	</th></tr>
+          	@endif
 				</tbody>
 			</table>
   		</div>
