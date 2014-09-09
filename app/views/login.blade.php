@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <title>Golden Tour Login</title>
@@ -12,7 +12,7 @@
          <body>
         <div id="container">
             <div id="logo">
-                <img src="img/logo.png" alt="">
+                <img src="img/logo/logo.png" alt="">
             </div>
             <div id="loginbox">            
                 <form  action="login" method="post">
