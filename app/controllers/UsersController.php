@@ -39,11 +39,15 @@ class UsersController extends BaseController {
     
         if( Auth::attempt($userdata))
         	{ 
-
-              return View::make('hola');  
+                $consultas = DB::select('select clientes.id as idCliente, clientes.nombre,reservations.id,
+		reservations.papeleta,reservations.tiempolimite,reservations.tipo,
+		reservations.estado,reservations.created_at from clientes,reservations where reservations.idCliente=clientes.id');
+        return View::make('consultas.index')->with('consultas',$consultas);
+              
         	}
        else{ 
-            return View::make('login');  
+          
+	return View::make('login');  
 
        } 	
     }		

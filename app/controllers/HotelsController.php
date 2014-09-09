@@ -32,7 +32,25 @@ class HotelsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$cliente = new Cliente;
+
+		$cliente->nombre = Input::get('nombre');
+		$cliente->direccion = Input::get('direccion');
+		$cliente->telefono = Input::get('telefono');
+		$cliente->email = Input::get('email');
+		$cliente->fechaDeNacimiento = Input::get('fechaDeNacimiento');
+		$cliente->referencia = Input::get('referencia');
+		$cliente->pasaporte = Input::get('pasaporte');
+
+		if ($cliente->save()) {
+			Session::flash('message','Guardado correctamente!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+
+		return Redirect::to('clientes/create');
 	}
 
 	/**
