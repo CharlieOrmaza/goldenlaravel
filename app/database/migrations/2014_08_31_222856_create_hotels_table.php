@@ -30,6 +30,10 @@ class CreateHotelsTable extends Migration {
 			$table->string('tpl');
 			$table->string('cpl');
 			$table->string('otros');
+			$table->string('costoP');
+			$table->string('costoN');
+			$table->string('obPax');
+			$table->string('obAg');
 			$table->timestamps();
 		});
 	}

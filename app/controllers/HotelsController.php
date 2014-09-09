@@ -10,7 +10,7 @@ class HotelsController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('hotels.index');
+		return View::make('hotels.create');
 	}
 
 	/**
@@ -32,17 +32,29 @@ class HotelsController extends BaseController {
 	 */
 	public function store()
 	{
-		$cliente = new Cliente;
 
-		$cliente->nombre = Input::get('nombre');
-		$cliente->direccion = Input::get('direccion');
-		$cliente->telefono = Input::get('telefono');
-		$cliente->email = Input::get('email');
-		$cliente->fechaDeNacimiento = Input::get('fechaDeNacimiento');
-		$cliente->referencia = Input::get('referencia');
-		$cliente->pasaporte = Input::get('pasaporte');
+		$hotel = new Hotel;
+		$hotel->noPapeleta = Input::get('numP');
+		$hotel->nombrePax = Input::get('nameP');
+		$hotel->telefono = Input::get('tel');
+		$hotel->email = Input::get('email');
+		$hotel->referencia = Input::get('ref');
+		$hotel->destino = Input::get('des');
+		$hotel->operador = Input::get('ope');
+		$hotel->nombreHotel = Input::get('nameH');
+		$hotel->fechaDeEntrada = Input::get('fechaE');
+		$hotel->fechaDeSalida = Input::get('fechaS');
+		$hotel->sgl = Input::get('habS');
+		$hotel->dbl = Input::get('habD');
+		$hotel->tpl = Input::get('habT');
+		$hotel->cpl = Input::get('habC');
+		$hotel->otros = Input::get('habO');
+		$hotel->costoP = Input::get('costoP');
+		$hotel->costoN = Input::get('costoN');
+		$hotel->obPax = Input::get('obPax');
+		$hotel->obAg = Input::get('obAg');
 
-		if ($cliente->save()) {
+		if ($hotel->save()) {
 			Session::flash('message','Guardado correctamente!');
 			Session::flash('class','success');
 		} else {
@@ -50,7 +62,7 @@ class HotelsController extends BaseController {
 			Session::flash('class','danger');
 		}
 
-		return Redirect::to('clientes/create');
+		return Redirect::to('hoteles/create');
 	}
 
 	/**

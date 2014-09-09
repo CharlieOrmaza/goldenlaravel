@@ -39,6 +39,7 @@ class UsersController extends BaseController {
     
         if( Auth::attempt($userdata))
         { 
+               Session::put('name', Input::get('username'));
                 return Redirect::to('consultas');
         }else{ 
 			return View::make('login');  

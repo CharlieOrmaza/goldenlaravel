@@ -32,10 +32,10 @@
 					<input type="text" name="ref" placeholder="Referecia" class="form-control" required>
 				</p>
 				<p>
-					<input type="text" name="Des" placeholder="Destino" class="form-control" required>
+					<input type="text" name="des" placeholder="Destino" class="form-control" required>
 				</p>
 				<p>
-					<input type="text" name="Ope" placeholder="Operador" class="form-control" required>
+					<input type="text" name="ope" placeholder="Operador" class="form-control" required>
 				</p>
                   <p>
 					<h3>Datos del hotel</h3><hr>
@@ -46,54 +46,54 @@
 				</p>
 				<p>
 				Fecha de Entrada:
-					<input type="date" name="FechaE" placeholder="Fecha de entrada" class="form-control" required>
+					<input type="date" name="fechaE" placeholder="Fecha de entrada" class="form-control" required>
 				</p>
 				<p>
 				Fecha de Salida:
-					<input type="date" name="FechaS" placeholder="" class="form-control" required>
+					<input type="date" name="fechaS" placeholder="" class="form-control" required>
 				</p>
 
 				<p> 
 				Habitaciones Sencilla:
-					<input type="number" name="HabS" placeholder="Habitaciones Sencilla" class="form-control">
+					<input type="number" name="habS" placeholder="Habitaciones Sencilla" class="form-control">
 				</p>
 
 				<p>
 				Habitaciones Dobles:
-					<input type="number" name="HabD" placeholder="Habitaciones Dobles" class="form-control">
+					<input type="number" name="habD" placeholder="Habitaciones Dobles" class="form-control">
 				</p>
 
 				<p>
 				Habitaciones Triples:
-					<input type="number" name="HabT" placeholder="Habitaciones Triples"  class="form-control">
+					<input type="number" name="habT" placeholder="Habitaciones Triples"  class="form-control">
 				</p>
 
 				<p>
 				Habitaciones Cuadruples:
-					<input type="number" name="HabC" placeholder="Habitaciones Cuadruples" class="form-control">
+					<input type="number" name="habC" placeholder="Habitaciones Cuadruples" class="form-control">
 				</p>
 
 				<p>
 				Otras Habitaciones:
-					<input type="number" name="HabO" placeholder="Otras Habitaciones" class="form-control">
+					<input type="number" name="habO" placeholder="Otras Habitaciones" class="form-control">
 				</p>
 
 				<p>
 					<h3>Datos del Costo</h3><hr>
 				</p>
 				<p>
-				<input type="text" name="CostoP" placeholder="Costo Pax" class="form-control" required>
+				<input type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
 				</p>
 				<p>
 				    
-					<input type="text" name="CostoN" placeholder="Costo Neto" class="form-control" required>
+					<input type="text" name="costoN" placeholder="Costo Neto" class="form-control" required>
 				</p>
 				<p>
-				   <textarea  name="ObPax" placeholder="Observaciones Pax" class="form-control" required> </textarea>
+				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" required> </textarea>
 					
 				</p>
 				<p>
-					<textarea name="ObAg" placeholder="Observaciones Agencia" class="form-control" required> </textarea>
+					<textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" required> </textarea>
 				</p>
 
 				<p>
