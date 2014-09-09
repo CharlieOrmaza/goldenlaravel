@@ -28,3 +28,6 @@ Route::resource('consultas', 'ConsultasController');
 Route::post('pagos/store/{papeleta}','PagosController@store');
 Route::get('pagos/nuevo/{papeleta?}','pagosController@create');
 Route::resource('pagos', 'PagosController');
+
+Route::resource('/', 'UsersController');
+Route::post('login' ,'UsersController@login');
