@@ -46,9 +46,12 @@ class PagosController extends \BaseController {
 		$pagos = new Pago;
 
 		$pagos->cantidad = Input::get('cantidad');
+		$pagos->papeleta = Input::get('papeleta');
 		$pagos->formaDePago = Input::get('formaDePago');
 		$pagos->tarjeta = Input::get('tarjeta');
+		$pagos->cupon = Input::get('cupon');
 		$pagos->pagoDe = Input::get('tipoDePago');
+		//$pagos->usuario = Session::get('name');
 		
 
 		if ($pagos->save()) {
@@ -59,7 +62,7 @@ class PagosController extends \BaseController {
 			Session::flash('class','danger');
 		}
 
-		return Redirect::to('pagos/create');
+		return Redirect::to('pagos/nuevo/'.Input::get('papeleta'));
 	}
 
 	/**

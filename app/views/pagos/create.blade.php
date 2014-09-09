@@ -73,7 +73,7 @@
 				  		</div>
 
 				  		<div class="panel-body">
-				  			<form method="post" action="store">
+				  			<form method="post" action="../store">
 								<p>
 									Cantidad:<input type="number" name="cantidad" placeholder="Ingresa Cantidad" class="form-control" required>
 								</p>
@@ -87,22 +87,23 @@
 								</p >
 									
 								<p class="box1" style="display: none;">
-									Tarjeta:<input type="text" name="tarjeta" placeholder="Ingresa tipo de Tarjeta" class="form-control" required>
+									Tarjeta:<input type="text" name="tarjeta" placeholder="Ingresa tipo de Tarjeta" class="form-control" >
 								</p>
 									
 								<p class="box2" style="display: none;">
-									Clave Cupon:<input type="number" name="cupon" placeholder="Ingresa Clave del Cupon" class="form-control" required>
+									Clave Cupon:<input type="number" name="cupon" placeholder="Ingresa Clave del Cupon" class="form-control" >
 								
 								</p>
 								<p>Pago de:</p>
 								<p>
-									Pax <input type="radio" name="tipoDePago" value="Efectivo" checked="true">
-									- Agencia <input type="radio" name="tipoDePago" value="Tarjeta" >
+									Pax <input type="radio" name="tipoDePago" value="Pax" checked="true">
+									- Agencia <input type="radio" name="tipoDePago" value="Agencia" >
 
 								</p>
 								
 
 								<p>
+									<input type="hidden" name="papeleta" value="{{$res->papeleta}}" >
 									<input type="submit" value="Guardar" class="btn btn-success">
 									<a href="/consultas" class="btn btn-default">Regresar</a>
 								</p>
