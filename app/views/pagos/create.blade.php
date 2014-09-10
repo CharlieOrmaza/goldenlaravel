@@ -91,7 +91,7 @@
 								</p>
 									
 								<p class="box2" style="display: none;">
-									Clave Cupon:<input type="number" name="cupon" placeholder="Ingresa Clave del Cupon" class="form-control" >
+									Clave Cupon:<input type="text" name="cupon" placeholder="Ingresa Clave del Cupon" class="form-control" >
 								
 								</p>
 								<p>Pago de:</p>
@@ -127,6 +127,7 @@
 								<td>Usuario</td>
 								<td>Forma de Pago</td>
 								<td>tarjeta</td>
+								<td>Cupon</td>
 								<td>Fecha de Pago</td>
 								<td>Saldo Anterior</td>
 								<td>Abono</td>
@@ -142,6 +143,7 @@
 					  					<td>{{ $pago->usuario }}</td>
 					  					<td>{{ $pago->formaDePago }}</td>
 					  					<td>{{ $pago->tarjeta }}</td>
+					  					<td>{{ $pago->cupon }}</td>
 					  					<td>{{ $pago->created_at }}</td>
 					  					<td>{{ $costoPax }}</td>
 					  					<td>
@@ -176,6 +178,7 @@
 								<td>Usuario</td>
 								<td>Forma de Pago</td>
 								<td>tarjeta</td>
+								<td>Cupon</td>
 								<td>Fecha de Pago</td>
 								<td>Saldo Anterior</td>
 								<td>Abono</td>
@@ -191,6 +194,7 @@
 					  					<td>{{ $pago->usuario }}</td>
 					  					<td>{{ $pago->formaDePago }}</td>
 					  					<td>{{ $pago->tarjeta }}</td>
+					  					<td>{{ $pago->cupon }}</td>
 					  					<td>{{ $pago->created_at }}</td>
 					  					<td>{{ $costoNeto }}</td>
 					  					<td>

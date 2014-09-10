@@ -51,7 +51,7 @@ class PagosController extends \BaseController {
 		$pagos->tarjeta = Input::get('tarjeta');
 		$pagos->cupon = Input::get('cupon');
 		$pagos->pagoDe = Input::get('tipoDePago');
-		//$pagos->usuario = Session::get('name');
+		$pagos->usuario = Session::get('name');
 		
 
 		if ($pagos->save()) {
