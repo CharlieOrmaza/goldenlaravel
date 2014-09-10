@@ -16,10 +16,6 @@ class CreateHotelsTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('noPapeleta');
-			$table->string('nombrePax');
-			$table->string('telefono');
-			$table->string('email');
-			$table->string('referencia');
             $table->string('destino');
 			$table->string('operador');
 			$table->string('nombreHotel');
@@ -30,10 +26,6 @@ class CreateHotelsTable extends Migration {
 			$table->string('tpl');
 			$table->string('cpl');
 			$table->string('otros');
-			$table->string('costoP');
-			$table->string('costoN');
-			$table->string('obPax');
-			$table->string('obAg');
 			$table->timestamps();
 		});
 	}
