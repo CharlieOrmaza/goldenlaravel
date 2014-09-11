@@ -29,5 +29,6 @@ Route::post('pagos/store','PagosController@store');
 Route::get('pagos/nuevo/{papeleta?}','pagosController@create');
 Route::resource('pagos', 'PagosController');
 
-Route::resource('/', 'UsersController');
+Route::get('salir', 'UsersController@destroy');
 Route::post('login' ,'UsersController@login');
+Route::resource('/', 'UsersController');

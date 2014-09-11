@@ -37,5 +37,6 @@
    <li><a href="#">Entradas y Salidas</a></li>
   </ul>
  </li>
+ <li><a href="/salir">Salir</a></li>
 
  </ul>

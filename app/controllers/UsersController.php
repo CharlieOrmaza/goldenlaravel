@@ -39,8 +39,8 @@ class UsersController extends BaseController {
     
         if( Auth::attempt($userdata))
         { 
-               Session::put('name', Input::get('username'));
-                return Redirect::to('consultas');
+            Session::put('name', Input::get('username'));
+            return Redirect::to('consultas');
         }else{ 
 			return View::make('login');  
        } 	
@@ -93,9 +93,10 @@ class UsersController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy()
 	{
-		//
+		Session::flush();
+		return Redirect::to('/');  
 	}
 
 }

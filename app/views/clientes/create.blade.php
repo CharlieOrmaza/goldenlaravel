@@ -2,7 +2,7 @@
 @section('content')
 @include ('includes.menu')
 
-	<h1 class="panel">Clientes</h1>
+	<h1>Clientes</h1>
 
 	<div class="panel panel-success">
   		<div class="panel-heading">
