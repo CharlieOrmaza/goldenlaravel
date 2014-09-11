@@ -16,6 +16,7 @@ class CreateHotelsTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('noPapeleta');
+            $table->string('idCliente');
             $table->string('destino');
 			$table->string('operador');
 			$table->string('nombreHotel');
