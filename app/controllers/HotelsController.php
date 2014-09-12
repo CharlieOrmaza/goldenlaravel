@@ -33,22 +33,35 @@ class HotelsController extends BaseController {
 	public function store()
 	{
 
-		$hotel = new Hotel;
-		$hotel->noPapeleta = Input::get('numP');
-		$hotel->idCliente = Input::get('nameP');
-		$hotel->destino = Input::get('des');
-		$hotel->operador = Input::get('ope');
-		$hotel->nombreHotel = Input::get('nameH');
-		$hotel->fechaDeEntrada = Input::get('fechaE');
-		$hotel->fechaDeSalida = Input::get('fechaS');
-		$hotel->sgl = Input::get('habS');
-		$hotel->dbl = Input::get('habD');
-		$hotel->tpl = Input::get('habT');
-		$hotel->cpl = Input::get('habC');
-		$hotel->otros = Input::get('habO');
-		
+		$reservacion = new Reservation;
+		$reservacion->papeleta= Input::get('numP');
+		$reservacion->destino = Input::get('des');
+		$reservacion->operador = Input::get('ope');
+		$reservacion->tipo = 'Hotel';
+		$reservacion->estado = 'Activa';
+		$reservacion->idCliente = '1';
+		$reservacion->costoPax = Input::get('costoP');
+		$reservacion->costoNeto = Input::get('costoN');
+		$reservacion->observacionesPax = Input::get('obPax');
+		$reservacion->observacionesAgencia = Input::get('obAg');
+		$reservacion->tiempoLimite= Input::get('tmLim');
 
-		if ($hotel->save()) {
+		if ($reservacion->save()) {
+			$hotel = new Hotel;
+			$hotel->noPapeleta = Input::get('numP');
+			$hotel->idCliente = '1';
+			$hotel->destino = Input::get('des');
+			$hotel->operador = Input::get('ope');
+			$hotel->nombreHotel = Input::get('nameH');
+			$hotel->fechaDeEntrada = Input::get('fechaE');
+			$hotel->fechaDeSalida = Input::get('fechaS');
+			$hotel->sgl = Input::get('habS');
+			$hotel->dbl = Input::get('habD');
+			$hotel->tpl = Input::get('habT');
+			$hotel->cpl = Input::get('habC');
+			$hotel->otros = Input::get('habO');
+			$hotel->save();
+
 			Session::flash('message','Guardado correctamente!');
 			Session::flash('class','success');
 		} else {
