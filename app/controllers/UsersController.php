@@ -10,7 +10,12 @@ class UsersController extends BaseController {
 	 */
 	public function index()
 	{
-	   return View::make ('login');
+		if( Auth::check()){
+    		return Redirect::to('consultas');
+    	}else{
+    		return View::make ('login');	
+    	}
+	   	
 	}
 
 	/**
@@ -34,16 +39,16 @@ class UsersController extends BaseController {
 	{
 	 	$userdata = array(
         	'name' => Input::get('username'),
-        	 'password' => Input::get('password')
-        	);
+        	'password' => Input::get('password')
+        );
     
+    	
         if( Auth::attempt($userdata))
         { 
-            Session::put('name', Input::get('username'));
             return Redirect::to('consultas');
         }else{ 
-			return View::make('login');  
-       } 	
+			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');  
+        } 	
     }		
 	public function store()
 	{
@@ -95,8 +100,9 @@ class UsersController extends BaseController {
 	 */
 	public function destroy()
 	{
-		Session::flush();
-		return Redirect::to('/');  
+		if(Auth::logout());
+		return Redirect::to('/')->with('flash_error','El Usuario se desconecto correctamente');
 	}
+
 
 }

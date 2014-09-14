@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="css/login.css">
 	     </head>    
@@ -14,6 +14,9 @@
             <div id="logo">
                 <img src="img/logo/logo.png" alt="">
             </div>
+            @if (Session::has('flash_error'))
+                <div id="flash_error" class="alert alert-danger">{{ Session::get('flash_error') }}</div>
+            @endif
             <div id="loginbox">            
                 <form  action="login" method="post">
     				<p>Introduzca usuario y contraseña para continuar.</p>
