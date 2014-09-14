@@ -100,7 +100,7 @@ class UsersController extends BaseController {
 	 */
 	public function destroy()
 	{
-		if(Auth::logout());
+		Auth::logout();
 		return Redirect::to('/')->with('flash_error','El Usuario se desconecto correctamente');
 	}
 
