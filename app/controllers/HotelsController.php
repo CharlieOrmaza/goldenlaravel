@@ -81,9 +81,13 @@ class HotelsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		 $hotel = Hotel::find($id);
-
-		return View::make('hotels.show')->with('hotel',$hotel);
+      		 $hotel = Hotel::find($id);
+      		 $noPapel=$hotel->noPapeleta;
+      		 $id=$hotel->idCliente;
+      		 $cliente = Cliente::find($id);
+      		 $tipo = 'Hotel';
+             $reservacion = Reservation::find($noPapel and $tipo);
+		return View::make('hotels.show')->with('hotel',$hotel)->with('reservacion',$reservacion)->with('cliente',$cliente);
 	}
 
 	/**
@@ -96,7 +100,7 @@ class HotelsController extends BaseController {
 	public function edit($id)
 	{
 		 $hotel = Hotel::find($id);
-
+            
         return View::make('hotels.edit')->with('hotel',$hotel);
 		
 	}

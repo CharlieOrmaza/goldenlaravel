@@ -14,8 +14,21 @@
 	  			<p>
 	  				Numero de Papeleta: <strong>{{ $hotel->noPapeleta }}</strong>
 	  			</p>
+	  			<hr>
 	  			<p>
-	  				idCliente: <strong>{{ $hotel->idCliente }}</strong>
+					<h4>Datos del Pax</h4>
+				</p>
+	  			<p>
+	  				Nombre: <strong>{{ $cliente->nombre }}</strong>
+	  			</p>
+	  			<p>
+	  				Telefono: <strong>{{ $cliente->telefono }}</strong>
+	  			</p>
+	  			<p>
+	  				Email: <strong>{{ $cliente->email }}</strong>
+	  			</p>
+	  			<p>
+	  				Referencia: <strong>{{ $cliente->referencia }}</strong>
 	  			</p>
 	  			<p>
 	  				Destino: <strong>{{ $hotel->destino }}</strong>
@@ -23,6 +36,10 @@
 	  			<p>
 	  				Operador: <strong>{{ $hotel->operador}}</strong>
 	  			</p>
+	  			<hr>
+	  			<p>
+					<h4>Datos del Hotel</h4>
+				</p>
 	  			<p>
 	  				Hotel: <strong>{{ $hotel->nombreHotel }}</strong>
 	  			</p>
@@ -47,7 +64,27 @@
                 <p>
 	  				Otras Habitaciones: <strong>{{ $hotel->otros }}</strong>
 	  			</p>
-
+	  			<hr>
+	  			<p>
+					<h4>Datos del Costo</h4>
+				</p>
+                 <p>
+	  				Costo Pax: <strong>{{ $reservacion->costoPax }}</strong>
+	  			</p>
+	  			<p>
+	  				Costo Neto: <strong>{{ $reservacion->costoNeto }}</strong>
+	  			</p>
+	  			<p>
+	  				Tiempo Limite: <strong>{{ $reservacion->tiempoLimite  }}</strong>
+	  			</p>
+	  			<p>
+	  				Observaciones Pax: <strong>{{ $reservacion->observacionesPax   }}</strong>
+	  			</p>
+				 <p>
+	  				Observaciones Agencia: <strong>{{ $reservacion->observacionesAgencia  }}</strong>
+	  			</p>
+	  		
+	  			
 
 
 	        @else
