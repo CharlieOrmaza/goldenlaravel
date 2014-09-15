@@ -19,7 +19,7 @@ Route::get('clientes/edit/{id}','ClientesController@edit');
 Route::get('clientes/destroy/{id}','ClientesController@destroy');
 Route::resource('clientes', 'ClientesController');
 
-Route::post('Hoteles/update/{id}','HotelsController@update');
+Route::post('hoteles/update/{id}','HotelsController@update');
 Route::post('hoteles/store','HotelsController@store');
 Route::get('hoteles/show/{id}','HotelsController@show');
 Route::get('hoteles/edit/{id}','HotelsController@edit');

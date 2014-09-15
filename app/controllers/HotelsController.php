@@ -79,14 +79,14 @@ class HotelsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-      		 $hotel = Hotel::find($id);
+	public function show($noPapeleta)
+	{       
+      		 $hotel =  DB::table('hotels')->where('noPapeleta', $noPapeleta)->first();
       		 $noPapel=$hotel->noPapeleta;
       		 $id=$hotel->idCliente;
       		 $cliente = Cliente::find($id);
       		 $tipo = 'Hotel';
-             $reservacion = Reservation::find($noPapel and $tipo);
+              $reservacion = DB::table('reservations')->where('papeleta', $noPapeleta)->first();
 		return View::make('hotels.show')->with('hotel',$hotel)->with('reservacion',$reservacion)->with('cliente',$cliente);
 	}
 
@@ -97,11 +97,16 @@ class HotelsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($noPapeleta)
 	{
-		 $hotel = Hotel::find($id);
-            
-        return View::make('hotels.edit')->with('hotel',$hotel);
+		 $hotel =  DB::table('hotels')->where('noPapeleta', $noPapeleta)->first();
+             $noPapel=$hotel->noPapeleta;
+      		 $id=$hotel->idCliente;
+      		 $cliente = Cliente::find($id);
+      		 $tipo = 'Hotel';
+             $reservacion = DB::table('reservations')->where('papeleta', $noPapeleta)->first();   		 
+   
+        return View::make('hotels.edit')->with('hotel',$hotel)->with('reservacion',$reservacion)->with('cliente',$cliente);
 		
 	}
 
@@ -115,29 +120,30 @@ class HotelsController extends BaseController {
 	public function update($id)
 	{
 		$hotel = Hotel::find($id);
-
-		$hotel->noPapeleta = Input::get('numP');
-		$hotel->idCliente = Input::get('nameP');
-		$hotel->destino = Input::get('des');
-		$hotel->operador = Input::get('ope');
-		$hotel->nombreHotel = Input::get('nameH');
-		$hotel->fechaDeEntrada = Input::get('fechaE');
-		$hotel->fechaDeSalida = Input::get('fechaS');
-		$hotel->sgl = Input::get('habS');
-		$hotel->dbl = Input::get('habD');
-		$hotel->tpl = Input::get('habT');
-		$hotel->cpl = Input::get('habC');
-		$hotel->otros = Input::get('habO');
-
-		if ($hotel->save()) {
+		 
+	$hotel->noPapeleta = Input::get('numP');
+			$hotel->idCliente = '1';
+			$hotel->destino = Input::get('des');
+			$hotel->operador = Input::get('ope');
+			$hotel->nombreHotel = Input::get('nameH');
+			$hotel->fechaDeEntrada = Input::get('fechaE');
+			$hotel->fechaDeSalida = Input::get('fechaS');
+			$hotel->sgl = Input::get('habS');
+			$hotel->dbl = Input::get('habD');
+			$hotel->tpl = Input::get('habT');
+			$hotel->cpl = Input::get('habC');
+			$hotel->otros = Input::get('habO');
+	$noPapeleta=$hotel->noPapeleta;		
+	   if ($hotel->save()) {
 			Session::flash('message','Actualizado correctamente!');
 			Session::flash('class','success');
 		} else {
 			Session::flash('message','Ha ocurrido un error!');
 			Session::flash('class','danger');
 		}
-
-		return Redirect::to('hotels.edit/'.$id);
+   
+   return Redirect::to('hoteles/edit/'.$noPapeleta);
+	    
 	}
 
 	/**
