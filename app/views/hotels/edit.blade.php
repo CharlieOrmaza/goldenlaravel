@@ -52,19 +52,19 @@
 		            	Fecha de Salida<input value="{{ $hotel->fechaDeSalida }}" type="text" name="fechaS"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Habitaciones Sencillas:<input value="{{ $hotel->sgl }}" type="text" name="habS" class="form-control" required>
+		            	Habitaciones Sencillas:<input value="{{ $hotel->sgl }}" type="text" name="habS" class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Dobles:<input value="{{ $hotel->dbl }}" type="text" name="habD"  class="form-control" required>
+		            	Habitaciones Dobles:<input value="{{ $hotel->dbl }}" type="text" name="habD"  class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Triples:<input value="{{ $hotel->tpl }}" type="text" name="habT"  class="form-control" required>
+		            	Habitaciones Triples:<input value="{{ $hotel->tpl }}" type="text" name="habT"  class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Cuadruples:<input value="{{ $hotel->cpl }}" type="text" name="habC"  class="form-control" required>
+		            	Habitaciones Cuadruples:<input value="{{ $hotel->cpl }}" type="text" name="habC"  class="form-control" >
 		          	</p>
 		             <p>
-		            	Otras Habitaciones:<input value="{{ $hotel->otros }}" type="text" name="habO"  class="form-control" required>
+		            	Otras Habitaciones:<input value="{{ $hotel->otros }}" type="text" name="habO"  class="form-control" >
 		          	</p>
 		          		<hr>
 	  			<p>
