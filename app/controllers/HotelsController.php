@@ -99,15 +99,14 @@ class HotelsController extends BaseController {
 	 */
 	public function edit($noPapeleta)
 	{
+
 		 $hotel =  DB::table('hotels')->where('noPapeleta', $noPapeleta)->first();
              $noPapel=$hotel->noPapeleta;
       		 $id=$hotel->idCliente;
       		 $cliente = Cliente::find($id);
       		 $tipo = 'Hotel';
              $reservacion = DB::table('reservations')->where('papeleta', $noPapeleta)->first();   		 
-   
         return View::make('hotels.edit')->with('hotel',$hotel)->with('reservacion',$reservacion)->with('cliente',$cliente);
-		
 	}
 
 	/**
@@ -121,7 +120,6 @@ class HotelsController extends BaseController {
 	{
 		$hotel = Hotel::find($id);
 		 
-	$hotel->noPapeleta = Input::get('numP');
 			$hotel->idCliente = '1';
 			$hotel->destino = Input::get('des');
 			$hotel->operador = Input::get('ope');
@@ -133,8 +131,21 @@ class HotelsController extends BaseController {
 			$hotel->tpl = Input::get('habT');
 			$hotel->cpl = Input::get('habC');
 			$hotel->otros = Input::get('habO');
-	$noPapeleta=$hotel->noPapeleta;		
-	   if ($hotel->save()) {
+             $noPapeleta=$hotel->noPapeleta;	
+          $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
+          $reservacion->destino = Input::get('des');
+		$reservacion->operador = Input::get('ope'); 
+		$reservacion->tipo = 'Hotel';
+		$reservacion->estado = 'Activa';
+		$reservacion->costoPax = Input::get('costoP');
+		$reservacion->costoNeto = Input::get('costoN');
+		$reservacion->observacionesPax = Input::get('obPax');
+		$reservacion->observacionesAgencia = Input::get('obAg');
+		$reservacion->tiempoLimite= Input::get('tmLim');
+
+ 	   if ($hotel->save()) {
+          
+		$reservacion->save();
 			Session::flash('message','Actualizado correctamente!');
 			Session::flash('class','success');
 		} else {

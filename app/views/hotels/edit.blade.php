@@ -13,27 +13,27 @@
   			@if (!empty($hotel))
     			<form method="post" action="/hoteles/update/{{ $hotel->id }}">
 		          	<p>
-		            	Numero de Papeleta: <input value="{{ $hotel->noPapeleta }}" type="text" name="numP"  class="form-control" required>
+		            	Numero de Papeleta: <input disabled="true" value="{{ $hotel->noPapeleta }}" type="text" name="numP"  class="form-control" required>
 		          	</p>
 		          	<hr>
 	  			     <p>
 					<h4>Datos del Pax</h4>
 				    </p>
 		          	<p>
-		            	Nombre:<input value="{{ $cliente->nombre }}" type="text" name="nameP"  class="form-control" required>
+		            	Nombre:<input disabled="true" value="{{ $cliente->nombre }}" type="text" name="nameP"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Telefono:<input value="{{ $cliente->telefono }}" type="text" name="tel"  class="form-control" required>
+		            	Telefono:<input disabled="true" value="{{ $cliente->telefono }}" type="text" name="tel"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Email: <input value="{{ $cliente->email }}" type="text" name="email"  class="form-control" required>
+		            	Email: <input disabled="true" value="{{ $cliente->email }}" type="text" name="email"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Referencia: <input value="{{ $cliente->referencia }}" type="text" name="Ref"  class="form-control" required>
+		            	Referencia: <input disabled="true" value="{{ $cliente->referencia }}" type="text" name="Ref"  class="form-control" required>
 		          	</p>
 
 		          	<p>
-		            	Destino:<input value="{{ $hotel->destino  }}" type="text" name="des"  class="form-control" required>
+		            	Destino:<input  value="{{ $hotel->destino  }}" type="text" name="des"  class="form-control" required>
 		          	</p>
 		          	<p>
 		            	Operador:<input value="{{ $hotel->operador}}" type="text" name="ope"  class="form-control" required>
@@ -71,19 +71,19 @@
 					<h4>Datos del Costo</h4>
 				</p>
 				 <p>
-		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="CostoP" placeholder="" class="form-control" required>
+		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP"  class="form-control" required>
 		         </p>
 	  			<p>
-	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="CostoN" placeholder="" class="form-control" required>
+	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN"  class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="text" name="TiempoL" placeholder="" class="form-control" required>
+	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="text" name="tmLim"  class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Observaciones Pax:<input value="{{$reservacion->observacionesPax }}" type="text" name="ObPax" placeholder="" class="form-control" required>
+	  			Observaciones Pax:<input value="{{$reservacion->observacionesPax }}" type="text" name="obPax"  class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Observaciones Agencia:<input value="{{ $reservacion->observacionesAgencia}}" type="text" name="ObAgencia" placeholder="" class="form-control" required>
+	  			Observaciones Agencia:<input value="{{ $reservacion->observacionesAgencia}}" type="text" name="obAg"  class="form-control" required>
 	  			</p>
 	  			
 
