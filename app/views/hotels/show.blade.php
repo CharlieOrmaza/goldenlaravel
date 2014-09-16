@@ -92,7 +92,7 @@
 	          No existe información para éste Hotel.
 	        </p>
 	        @endif
-	        <a href="/hoteles" class="btn btn-default">Regresar</a>
+	        <a href="/consultas" class="btn btn-default">Regresar</a>
 		</div>
 	</div>
 
