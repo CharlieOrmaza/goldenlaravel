@@ -46,10 +46,10 @@
 		            	Hotel:<input value="{{ $hotel->nombreHotel }}" type="text" name="nameH"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Entrada<input value="{{ $hotel->fechaDeEntrada }}" type="text" name="fechaE"  class="form-control" required>
+		            	Fecha de Entrada:<input value="{{ $hotel->fechaDeEntrada }}" type="text" name="fechaE"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Salida<input value="{{ $hotel->fechaDeSalida }}" type="text" name="fechaS"  class="form-control" required>
+		            	Fecha de Salida: <input value="{{ $hotel->fechaDeSalida }}" type="text" name="fechaS"  class="form-control" required>
 		          	</p>
 		          	<p>
 		            	Habitaciones Sencillas:<input value="{{ $hotel->sgl }}" type="text" name="habS" class="form-control" >

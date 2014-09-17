@@ -26,6 +26,14 @@ Route::get('hoteles/edit/{id}','HotelsController@edit');
 Route::get('hoteles/destroy/{id}','HotelsController@destroy');
 Route::resource('hoteles', 'HotelsController');
 
+Route::post('aviones/update/{id}','PlanesController@update');
+Route::post('aviones/store','PlanesController@store');
+Route::get('aviones/show/{id}','PlanesController@show');
+Route::get('aviones/edit/{id}','PlanesController@edit');
+Route::get('aviones/destroy/{id}','PlanesController@destroy');
+Route::resource('aviones', 'PlanesController');
+
+
 Route::resource('consultas', 'ConsultasController');
 
 Route::post('pagos/store','PagosController@store');
