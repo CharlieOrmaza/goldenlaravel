@@ -80,7 +80,7 @@ class HotelsController extends BaseController {
 	 * @return Response
 	 */
 	public function show($noPapeleta)
-	{       
+	{
       		 $hotel =  DB::table('hotels')->where('noPapeleta', $noPapeleta)->first();
       		 $noPapel=$hotel->noPapeleta;
       		 $id=$hotel->idCliente;
