@@ -43,3 +43,6 @@ Route::resource('pagos', 'PagosController');
 Route::get('salir', 'UsersController@destroy');
 Route::post('login' ,'UsersController@login');
 Route::resource('/', 'UsersController');
+
+
+

@@ -11,9 +11,9 @@ class UsersController extends BaseController {
 	public function index()
 	{
 		if( Auth::check()){
-    		return Redirect::to('consultas');
+    		return Redirect::to('login');
     	}else{
-    		return View::make ('login');	
+    		return View::make ('index');	
     	}
 	   	
 	}

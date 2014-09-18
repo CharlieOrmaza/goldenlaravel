@@ -133,8 +133,7 @@ class PlanesController extends \BaseController {
 			$reservacion->observacionesAgencia = Input::get('obAg');
 			$reservacion->tiempoLimite= Input::get('tmLim');
        
- 	   if ($plane->save()) {
-          
+ 	   if ($plane->save()) {  
 		$reservacion->save();
 			Session::flash('message','Actualizado correctamente!');
 			Session::flash('class','success');
