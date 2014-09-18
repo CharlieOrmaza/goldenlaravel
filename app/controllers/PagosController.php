@@ -11,7 +11,6 @@ class PagosController extends \BaseController {
 	public function index()
 	{
 
-		
 		return View::make('pagos.index');
 	}
 

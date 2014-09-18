@@ -3,7 +3,6 @@
 @include ('includes.menu')
 
 	<h1>Consultas</h1>
-	
 
 	<div class="panel panel-success">
   		<div class="panel-heading">
@@ -21,7 +20,7 @@
 						<th>Tiempo Limite</th>
 						<th>Tipo</th>
 						<th>Estado</th>
-						<th>Acciones</th>				
+						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
