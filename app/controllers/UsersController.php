@@ -13,9 +13,9 @@ class UsersController extends BaseController {
 		if( Auth::check()){
     		return Redirect::to('index');
     	}else{
-    		return View::make ('login');	
+    		return View::make('login');
     	}
-	   	
+
 	}
 
 	/**
@@ -35,24 +35,25 @@ class UsersController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function login()
+	public function login($username="",$password="")
 	{
+		$userdata="";
 	 	$userdata = array(
         	'name' => Input::get('username'),
         	'password' => Input::get('password')
         );
-    
-    	
+
         if( Auth::attempt($userdata))
-        { 
+        {
             return Redirect::to('consultas');
-        }else{ 
-			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');  
-        } 	
-    }		
+        }else{
+			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');
+        }
+    }
+
 	public function store()
 	{
-	 
+
 	}
 
 	/**

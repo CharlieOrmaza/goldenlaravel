@@ -1,7 +1,18 @@
 @extends('layouts.default')
 @section('content')
 @include ('includes.menu')
-	
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
+
+		$.get("/clientes/lista/2000", function (data) {
+			$('#tablaClientes').html(data);
+		});
+	});
+</script>
+
 	<h1>GoldenTour</h1>
 
 	<div class="panel panel-success">
@@ -11,7 +22,7 @@
 <form method="post" action="store">
   		<div class="panel-body">
                 <p>
-					<h3>No. Papeleta</h3><hr>
+					<h3>Papeleta</h3><hr>
 				</p>
   		        <p>
 					<input type="text" name="numP" placeholder="Numero de Papeleta" class="form-control" required>
@@ -19,6 +30,7 @@
   			    <p>
 					<h3>Datos del Pax</h3><hr>
 				</p>
+				<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
   			    <p>
   			     	Nombre Pax:
 					<input type="text" name="nameP" placeholder="Nombre del Pasajero" class="form-control" required>

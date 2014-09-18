@@ -3,7 +3,6 @@
 @include ('includes.menu')
 
 	<h1>Todos los clientes</h1>
-	
 
 	<div class="panel panel-success">
   		<div class="panel-heading">
@@ -21,7 +20,7 @@
 						<th>Email</th>
 						<th>Fecha de Nacimiento</th>
 						<th>Referencia</th>
-						<th>Acciones</th>						
+						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -37,7 +36,6 @@
 							<td>
 								<a href="/clientes/show/{{ $cliente->id }}"><span class="label label-info">Ver</span></a>
 								<a href="/clientes/edit/{{ $cliente->id }}"><span class="label label-success">Editar</span></a>
-								<a href="{{ url('/clientes/destroy',$cliente->id) }}"><span class="label label-danger">Eliminar</span></a>
 							</td>
 						</tr>
 					@endforeach

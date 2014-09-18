@@ -16,7 +16,7 @@ class CreatePapeletaxclientesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('papeleta');
-			$table->string('idCliente');
+			$table->integer('idCliente');
 			$table->timestamps();
 		});
 	}

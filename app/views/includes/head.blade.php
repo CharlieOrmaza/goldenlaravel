@@ -43,7 +43,7 @@
 		float: right;
 	}
 	html{
-		background-image: url('/img/fondos/background2.jpg');
+		background-image: url('/img/fondos/background4.jpg');
 	}
 </style>
 	

@@ -11,7 +11,8 @@
 |
 */
 
-
+Route::group(array('before' => 'auth'), function()
+{
 Route::post('clientes/update/{id}','ClientesController@update');
 Route::post('clientes/store','ClientesController@store');
 Route::get('clientes/show/{id}','ClientesController@show');
@@ -40,8 +41,13 @@ Route::post('pagos/store','PagosController@store');
 Route::get('pagos/nuevo/{papeleta?}','pagosController@create');
 Route::resource('pagos', 'PagosController');
 
+Route::get('clientes/lista/{papeleta}', 'ClientesController@papeletaxclientesTabla');
+Route::get('clientes/cancelar/{papeletaXClientes_id}', 'ClientesController@cancelar');
+
+});
+
 Route::get('salir', 'UsersController@destroy');
-Route::post('login' ,'UsersController@login');
+Route::any('login' ,'UsersController@login');
 Route::resource('/', 'UsersController');
 
 
