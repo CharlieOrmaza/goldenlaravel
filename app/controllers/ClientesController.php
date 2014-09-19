@@ -23,9 +23,7 @@ class ClientesController extends BaseController {
 	 */
 	public function create()
 	{
-        
         return View::make('clientes.create');
-
 	}
 
 	/**
@@ -152,10 +150,17 @@ class ClientesController extends BaseController {
 		//$idClientes= papeletaxclientes::where("papeleta","=",$papeleta)->get();
 		$consultas= DB::select('select clientes.id as idCliente, clientes.nombre,
 		 clientes.direccion, clientes.telefono, clientes.email, clientes.fechaDeNacimiento,
-		 clientes.referencia, clientes.pasaporte, papeletaXClientes.id as papeletaXClientes_id, papeletaXClientes.papeleta from clientes,papeletaxclientes
+		 clientes.referencia, clientes.pasaporte, papeletaXClientes.id as papeletaXClientes_id,
+		 papeletaXClientes.papeleta from clientes,papeletaxclientes
 		 where clientes.id=papeletaXClientes.idCliente and papeletaxclientes.papeleta='.$papeleta.';');
 		return View::make('clientes.tabla')->with('consultas',$consultas);
 
+	}
+
+	public function buscar($papeleta=2000)
+	{
+		$cliente = Cliente::orderBy('id','nombre')->get();
+		return View::make('clientes.tabla2')->with('clientes',$cliente);
 	}
 
 }

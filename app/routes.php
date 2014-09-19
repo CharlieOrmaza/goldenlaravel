@@ -16,6 +16,7 @@ Route::group(array('before' => 'auth'), function()
 Route::post('clientes/update/{id}','ClientesController@update');
 Route::post('clientes/store','ClientesController@store');
 Route::get('clientes/show/{id}','ClientesController@show');
+Route::get('clientes/buscar/{papeleta}','ClientesController@buscar');
 Route::get('clientes/edit/{id}','ClientesController@edit');
 Route::get('clientes/destroy/{id}','ClientesController@destroy');
 Route::resource('clientes', 'ClientesController');

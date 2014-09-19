@@ -3,7 +3,7 @@
  <li><a href="#">Nueva Reservaciones</a>
   <ul>
    <li><a href="/hoteles/create">Hotel</a></li>
-   <lii><a href="#">Avion</a></li>
+   <lii><a href="/aviones">Avion</a></li>
    <li ><a href="#">Hotel + Avion</a></li>
    <li><a href="#">Tours</a></li>
    <li><a href="#">Renta de Auto</a></li>
@@ -13,7 +13,7 @@
   </ul>
  </li>
  <li><a href="/consultas">Consultas</a>
-  
+
  </li>
  <li><a href="/clientes">Clientes</a>
    <ul>
