@@ -34,6 +34,8 @@ Route::get('aviones/edit/{id}','PlanesController@edit');
 Route::get('aviones/destroy/{id}','PlanesController@destroy');
 Route::resource('aviones', 'PlanesController');
 
+Route::get('reservation/destroy/{papeleta}', 'ReservationsController@destroy');
+Route::resource('reservation', 'ReservationsController');
 
 Route::resource('consultas', 'ConsultasController');
 

@@ -41,8 +41,10 @@
 							<td>{{ $consulta->tipo }}</td>
 							<td>{{ $consulta->estado }}</td>
 							<td>
+							@if($consulta->estado =='Activa')
 								<a href="/{{$miTipo}}/edit/{{ $consulta->papeleta }}"><span class="label label-success">Editar</span></a>
-								<a href="{{ url('/'.$miTipo.'/destroy',$consulta->papeleta) }}"><span class="label label-danger">Cancelar</span></a>
+								<a href="{{ url('/reservation/destroy',$consulta->papeleta) }}"><span class="label label-danger">Cancelar</span></a>
+							@endif
 								<a href="/pagos/nuevo/{{ $consulta->papeleta }}"><span class="label label-info">Pago</span></a>
 							</td>
 						</tr>
