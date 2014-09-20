@@ -72,6 +72,24 @@ class HotelsController extends BaseController {
 		return Redirect::to('hoteles/create');
 	}
 
+
+   public function isValid($name)
+    {
+      
+        if ($validator->passes())
+        {
+            return true;
+        }
+        
+        $this->errors = $validator->errors();
+        
+        return false;
+    }
+
+
+
+
+
 	/**
 	 * Display the specified resource.
 	 * GET /hotels/{id}

@@ -28,7 +28,7 @@ class UsersController extends BaseController {
 	{
 		//
 	}
-
+      
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /users
@@ -45,7 +45,7 @@ class UsersController extends BaseController {
 
         if( Auth::attempt($userdata))
         {
-            return Redirect::to('consultas');
+            return Redirect::to('index');
         }else{
 			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');
         }
