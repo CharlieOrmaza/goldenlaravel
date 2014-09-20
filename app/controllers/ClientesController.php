@@ -26,6 +26,7 @@ class ClientesController extends BaseController {
         return View::make('clientes.create');
 	}
 
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -159,8 +160,34 @@ class ClientesController extends BaseController {
 
 	public function buscar($papeleta=2000)
 	{
-		$cliente = Cliente::orderBy('id','nombre')->get();
-		return View::make('clientes.tabla2')->with('clientes',$cliente);
+
+		$consulta = DB::select('select * from clientes where clientes.id not in (
+			select idCliente from papeletaxclientes where papeleta='.$papeleta.");");
+		return View::make('clientes.tabla2')->with('clientes',$consulta);
+	}
+
+	public function nuevoPax()
+	{
+        return View::make('clientes.nuevopax');
+	}
+
+	public function nuevoPaxStore()
+	{
+		$cliente = new Cliente;
+
+		$cliente->nombre = Input::get('nombre');
+		$cliente->direccion = Input::get('direccion');
+		$cliente->telefono = Input::get('telefono');
+		$cliente->email = Input::get('email');
+		$cliente->fechaDeNacimiento = Input::get('fechaDeNacimiento');
+		$cliente->referencia = Input::get('referencia');
+		$cliente->pasaporte = Input::get('pasaporte');
+
+		if ($cliente->save()) {
+			return Response::json("Creado Correctamente");
+		} else {
+			return Response::json("Error Al crear Nuevo Pax");
+		}
 	}
 
 }

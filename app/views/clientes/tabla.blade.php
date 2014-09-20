@@ -4,10 +4,8 @@
 			<tr>
 				<th>Id</th>
 				<th>Nombre</th>
-				<th>Direccion</th>
-				<th>Telefono</th>
-				<th>Email</th>
 				<th>Fecha de Nacimiento</th>
+				<th>Pasaporte</th>
 				<th>Referencia</th>
 				<th>Acciones</th>
 			</tr>
@@ -18,10 +16,8 @@
 			<tr>
 				<td>{{ $consulta->idCliente }}</td>
 				<td>{{ $consulta->nombre }}</td>
-				<td>{{ $consulta->direccion }}</td>
-				<td>{{ $consulta->telefono }}</td>
-				<td>{{ $consulta->email }}</td>
 				<td>{{ $consulta->fechaDeNacimiento }}</td>
+				<td>{{ $consulta->pasaporte }}</td>
 				<td>{{ $consulta->referencia }}</td>
 				<td>
 					<a href="/clientes/edit/{{ $consulta->idCliente }}"><span class="label label-success">Editar</span></a>

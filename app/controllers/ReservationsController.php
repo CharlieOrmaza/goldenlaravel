@@ -30,9 +30,17 @@ class ReservationsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id=null,$papeleta=null)
 	{
-		//
+		$reservacion = new Papeletaxcliente;
+		$reservacion->papeleta= $papeleta;
+		$reservacion->idCliente= $id;
+
+		if ($reservacion->save()) {
+			return "Se Agrego Cliente a la reservacion";
+		} else {
+			return "Error al agregar Cliente a la reservacion";
+		}
 	}
 
 	/**

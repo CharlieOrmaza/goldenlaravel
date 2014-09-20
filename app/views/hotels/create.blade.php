@@ -10,7 +10,7 @@
 	$(document).ready(function(){
 		$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
 
-		$.get("/clientes/lista/2000", function (data) {
+		$.get("/clientes/lista/{{Session::get('papeleta')}}", function (data) {
 			$('#tablaClientes').html(data);
 		});
 
@@ -18,18 +18,54 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		var modo=1;
 		$('#nuevoCliente').click(function(e){
 			e.preventDefault();
 			$('#modal1 .modal-title').html('Buscar Pax');
 			$('#modal1 .modal-body').html('<img src="/img/preloader-01.gif" height="20">');
-			$('#modal1 .btn-primary').html('Continuar');
+			$('#modal1 .btn-primary').show();
+			$('#modal1 .btn-primary').html('Nuevo Pax');
 			$('#modal1 .btn-default').html('Cerrar');
 			$('#modal1').modal();
-			$.get("/clientes/buscar/2000", function (data) {
+			$.get("/clientes/buscar/{{Session::get('papeleta')}}", function (data) {
 				$('#modal1 .modal-body').html(data);
 			});
 		});
+
+		$("#modal1").on('hidden.bs.modal', function (e) {
+			$('#modal1 .modal-body').html("");
+			$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
+	    	$.get("/clientes/lista/{{Session::get('papeleta')}}", function (data) {
+				$('#tablaClientes').html(data);
+			});
+	    });
+
+	    $('#modal1 .btn-primary').click(function(e){
+	    	//$('#modal1').modal('toggle');
+	    	if(modo==1){
+	    		modo=2;
+	    		$('#modal1 .modal-title').html('Nuevo Pax');
+				$('#modal1 .modal-body').html('<img src="/img/preloader-01.gif" height="20">');
+				//$('#modal1 .btn-primary').hide();
+				$('#modal1 .btn-primary').html('Regresar');
+				$('#modal1 .btn-default').html('Cerrar');
+				//$('#modal1').modal();
+				$.get("/clientes/nuevopax/create", function (data) {
+					$('#modal1 .modal-body').html(data);
+				});
+	    	}else{
+	    		modo=1;
+	    		$('#modal1 .modal-title').html('Buscar Pax');
+				$('#modal1 .modal-body').html('<img src="/img/preloader-01.gif" height="20">');
+				//$('#modal1 .btn-primary').show();
+				$('#modal1 .btn-primary').html('Nuevo Pax');
+				$('#modal1 .btn-default').html('Cerrar');
+				$('#modal1').modal();
+				$.get("/clientes/buscar/{{Session::get('papeleta')}}", function (data) {
+					$('#modal1 .modal-body').html(data);
+				});
+	    	}
+	    });
 
 	});
 </script>
@@ -46,7 +82,7 @@
 					<h3>Papeleta</h3><hr>
 				</p>
   		        <p>
-					<input type="text" name="numP" placeholder="Numero de Papeleta" class="form-control" required>
+  		        	<b>{{Session::get('papeleta')}}</b>
 				</p>
   			    <p>
 					<h3>Datos del Pax</h3><hr>
@@ -122,7 +158,7 @@
 					<input type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
 				</p>
 				<p>
-					Costo Neto:    
+					Costo Neto:
 					<input type="text" name="costoN" placeholder="Costo Neto" class="form-control" required>
 				</p>
 				<p>
@@ -132,7 +168,7 @@
 				<p>
 					Observaciones Pax:
 				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" required> </textarea>
-					
+
 				</p>
 				<p>
 					Observaciones Agencia:
@@ -145,18 +181,12 @@
 				</p>
 
 
-			
+
 		</div>
 
 		</form>
 	</div>
-
-
-
-
-
 	@if(Session::has('message'))
 		<div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
 	@endif
 
-						

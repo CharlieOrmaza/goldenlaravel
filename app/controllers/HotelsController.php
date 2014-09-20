@@ -10,6 +10,7 @@ class HotelsController extends BaseController {
 	 */
 	public function index()
 	{
+		Session::put('papeleta', '2000');
 		return View::make('hotels.create');
 	}
 
@@ -21,7 +22,7 @@ class HotelsController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('hotels.create');
+		return Redirect::to('hoteles');
 	}
 
 	/**
