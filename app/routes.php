@@ -13,12 +13,10 @@
 
 Route::group(array('before' => 'auth'), function()
 {
-
-	
-});
 Route::post('clientes/update/{id}','ClientesController@update');
 Route::post('clientes/store','ClientesController@store');
 Route::get('clientes/show/{id}','ClientesController@show');
+Route::get('clientes/buscar/{papeleta}','ClientesController@buscar');
 Route::get('clientes/edit/{id}','ClientesController@edit');
 Route::get('clientes/destroy/{id}','ClientesController@destroy');
 Route::resource('clientes', 'ClientesController');
@@ -37,6 +35,8 @@ Route::get('aviones/edit/{id}','PlanesController@edit');
 Route::get('aviones/destroy/{id}','PlanesController@destroy');
 Route::resource('aviones', 'PlanesController');
 
+Route::get('reservation/destroy/{papeleta}', 'ReservationsController@destroy');
+Route::resource('reservation', 'ReservationsController');
 
 Route::resource('consultas', 'ConsultasController');
 
@@ -46,7 +46,7 @@ Route::resource('pagos', 'PagosController');
 
 Route::get('clientes/lista/{papeleta}', 'ClientesController@papeletaxclientesTabla');
 Route::get('clientes/cancelar/{papeletaXClientes_id}', 'ClientesController@cancelar');
-
+});
 
 
 Route::get('salir', 'UsersController@destroy');

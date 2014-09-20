@@ -3,6 +3,9 @@
 @include ('includes.menu')
 
 <script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
@@ -10,6 +13,24 @@
 		$.get("/clientes/lista/2000", function (data) {
 			$('#tablaClientes').html(data);
 		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#nuevoCliente').click(function(e){
+			e.preventDefault();
+			$('#modal1 .modal-title').html('Buscar Pax');
+			$('#modal1 .modal-body').html('<img src="/img/preloader-01.gif" height="20">');
+			$('#modal1 .btn-primary').html('Continuar');
+			$('#modal1 .btn-default').html('Cerrar');
+			$('#modal1').modal();
+			$.get("/clientes/buscar/2000", function (data) {
+				$('#modal1 .modal-body').html(data);
+			});
+		});
+
 	});
 </script>
 
@@ -30,31 +51,28 @@
   			    <p>
 					<h3>Datos del Pax</h3><hr>
 				</p>
-				<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
   			    <p>
-  			     	Nombre Pax:
-					<input type="text" name="nameP" placeholder="Nombre del Pasajero" class="form-control" required>
-				</p>
-				<p>
-					Telefono:
-					<input type="text" name="tel" placeholder="Telefono" class="form-control" required>
-				</p>
-				<p>
-					Email:
-					<input type="text" name="email" placeholder="Email" class="form-control" required>
-				</p>
-				<p>
-					Referencia:
-					<input type="text" name="ref" placeholder="Referecia" class="form-control" required>
-				</p>
-				<p>
-					Destino:
-					<input type="text" name="des" placeholder="Destino" class="form-control" required>
-				</p>
-				<p>
-					Operador:
-					<input type="text" name="ope" placeholder="Operador" class="form-control" required>
-				</p>
+					<button class="btn btn-primary btn-lg" id="nuevoCliente" >
+					  <img src="/img/iconos/buscar.png" height="20"> Buscar Pax
+					</button>
+		    		<div class="modal fade" id="modal1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-lg">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					        <h4 class="modal-title text-primary"></h4>
+					      </div>
+					      <div class="modal-body">
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" id="modal-button1" class="btn btn-default" data-dismiss="modal"></button>
+					        <button type="button" id="modal-button2" class="btn btn-primary"></button>
+					      </div>
+					    </div><!-- /.modal-content -->
+					  </div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+					<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
+  			    </p>
                 <p>
 					<h3>Datos del hotel</h3><hr>
 				</p>
@@ -71,7 +89,7 @@
 					<input type="date" name="fechaS" placeholder="" class="form-control" required>
 				</p>
 
-				<p> 
+				<p>
 					Habitaciones Sencilla:
 					<input type="number" name="habS" placeholder="Habitaciones Sencilla" class="form-control">
 				</p>

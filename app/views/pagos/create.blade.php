@@ -9,7 +9,7 @@
 				if($(this).attr("value")=="Tarjeta"){
 					$(".box2").hide();
 					$(".box1").show();
-					
+
 				}else if($(this).attr("value")=="Cupon"){
 					$(".box1").hide();
 					$(".box2").show();
@@ -18,7 +18,7 @@
 					$(".box2").hide();
 				}
 
-				
+
 			}
 
         });
@@ -32,7 +32,7 @@
 				"sSwfPath": "/dataTables/TableTools/swf/copy_csv_xls_pdf.swf"
 			}
 		} );
-	
+
     });
 </script>
 
@@ -65,7 +65,7 @@
 		  			<p>
 		  				Tiempo Limite: <strong>{{ $res->tiempoLimite }}(aaaa-mm-dd)</strong>
 		  			</p>
-		  			
+
 		  			@if($res->estado=='Activa')
 	  				<div class="panel panel-info">
 				  		<div class="panel-heading">
@@ -85,14 +85,14 @@
 									- Cupon <input type="radio" name="formaDePago" value="Cupon" >
 
 								</p >
-									
+
 								<p class="box1" style="display: none;">
 									Tarjeta:<input type="text" name="tarjeta" placeholder="Ingresa tipo de Tarjeta" class="form-control" >
 								</p>
-									
+
 								<p class="box2" style="display: none;">
 									Clave Cupon:<input type="text" name="cupon" placeholder="Ingresa Clave del Cupon" class="form-control" >
-								
+
 								</p>
 								<p>Pago de:</p>
 								<p>
@@ -100,7 +100,7 @@
 									- Agencia <input type="radio" name="tipoDePago" value="Agencia" >
 
 								</p>
-								
+
 
 								<p>
 									<input type="hidden" name="papeleta" value="{{$res->papeleta}}" >
@@ -113,7 +113,7 @@
 					@endif
 					<?php break; ?>
   				@endforeach
-  				
+
   				<div class="panel panel-info">
 			  		<div class="panel-heading">
 			  			<h4>Pagos de Pax</h4>
@@ -131,13 +131,13 @@
 								<td>Fecha de Pago</td>
 								<td>Saldo Anterior</td>
 								<td>Abono</td>
-								<td>Saldo Pendiente</td>	
+								<td>Saldo Pendiente</td>
 							</tr>
 						</thead>
 						<tbody>
 					  		@foreach($pagos as $pago)
 					  			@if($pago->pagoDe=="Pax")
-					  			
+
 					  				<tr>
 					  					<td>{{ $pago->id }}</td>
 					  					<td>{{ $pago->usuario }}</td>
@@ -148,7 +148,7 @@
 					  					<td>{{ $costoPax }}</td>
 					  					<td>
 					  					<?php if($pago->cantidad <= 0){
-					  						echo '<span class="label label-danger">';} 
+					  						echo '<span class="label label-danger">';}
 							  			elseif($pago->cantidad > $costoNeto ){
 							  				echo '<span class="label label-info">';}
 							  			else{ echo '<span>';} ?>
@@ -158,7 +158,7 @@
 					  					<?php $costoPax = $costoPax-$pago->cantidad; ?>
 					  					<td>{{ $costoPax }}</td>
 					  				</tr>
-					  				
+
 					  			@endif
 					  		@endforeach
 				  		</tbody>
@@ -182,13 +182,13 @@
 								<td>Fecha de Pago</td>
 								<td>Saldo Anterior</td>
 								<td>Abono</td>
-								<td>Saldo Pendiente</td>	
+								<td>Saldo Pendiente</td>
 							</tr>
 						</thead>
 						<tbody>
 					  		@foreach($pagos as $pago)
 					  			@if($pago->pagoDe=="Agencia")
-					  				
+
 					  				<tr>
 					  					<td>{{ $pago->id }}</td>
 					  					<td>{{ $pago->usuario }}</td>
@@ -199,7 +199,7 @@
 					  					<td>{{ $costoNeto }}</td>
 					  					<td>
 					  					<?php if($pago->cantidad <= 0){
-					  						echo '<span class="label label-danger">';} 
+					  						echo '<span class="label label-danger">';}
 							  			elseif($pago->cantidad > $costoNeto ){
 							  				echo '<span class="label label-success">';}
 							  			else{ echo '<span>';} ?>
@@ -208,28 +208,28 @@
 							  			</td>
 					  					<?php $costoNeto = $costoNeto-$pago->cantidad; ?>
 					  					<td>{{ $costoNeto }}</td>
-					  					
+
 					  				</tr>
 					  				</div>
 					  			@endif
 					  		@endforeach
 				  		</tbody>
-					</table>	
+					</table>
 					</div>
 				</div>
-				
+
           	@else
 	          	<p>
 	            	No existe información para esta Papeleta.
 	          	</p>
 	          	<a href="/consultas" class="btn btn-default">Regresar</a>
           	@endif
-        		
+
       			</form>
 		</div>
 	</div>
 
 
 
-	
+
 @stop

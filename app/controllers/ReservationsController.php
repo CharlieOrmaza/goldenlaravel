@@ -78,9 +78,20 @@ class ReservationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($papeleta=null)
 	{
-		//
+		$reserva =  DB::table('reservations')->where('papeleta','=', $papeleta)->first();
+        $id=$reserva->id;
+      	$reservacion = Reservation::find($id);
+      	$reservacion->estado = 'Cancelada';
+      	if ($reservacion->save()) {
+			Session::flash('message','Se Cancelo correctamente la papeleta No. '.$papeleta.'!');
+			Session::flash('class','success');
+		} else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
+      	return Redirect::to('consultas');
 	}
 
 }

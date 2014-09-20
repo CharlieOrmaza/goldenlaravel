@@ -45,7 +45,11 @@ class UsersController extends BaseController {
 
         if( Auth::attempt($userdata))
         {
+<<<<<<< HEAD
             return Redirect::to('index');
+=======
+            return Redirect::to('/');
+>>>>>>> origin/master
         }else{
 			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');
         }

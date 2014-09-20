@@ -1,22 +1,26 @@
 
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="/css/menu.css">
 
 
-<!-- jQuery -->
-<script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.js"></script>
+<!-- jS -->
 <script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="/js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf8" src="/js/bootstrap.min.js"></script>
+
 
 <!-- DataTables CSS -->
 <link rel="stylesheet" type="text/css" href="/dataTables/css/jquery.dataTables.css">
 <link rel="stylesheet" type="text/css" href="/dataTables/TableTools/css/dataTables.tableTools.css">
-  
+
 <!-- DataTables -->
 <script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="/dataTables/TableTools/js/dataTables.tableTools.js"></script>
 
+<!-- CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/css/menu.css">
 
 <script type="text/javascript">
     $(document).ready( function () {
@@ -26,9 +30,9 @@
 				"sSwfPath": "/dataTables/TableTools/swf/copy_csv_xls_pdf.swf"
 			}
 		} );
-	
+
     });
-</script>	
+</script>
 
 <style>
 	body {
@@ -46,5 +50,5 @@
 		background-image: url('/img/fondos/background4.jpg');
 	}
 </style>
-	
-	
+
+
