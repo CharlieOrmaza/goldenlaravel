@@ -39,7 +39,7 @@ class PlanesController extends \BaseController {
 	 */
 	public function create()
 	{
-	  
+		return Redirect::to('aviones');
 	}
 
 	/**sewly created resource in storage.
@@ -49,7 +49,7 @@ class PlanesController extends \BaseController {
 	 */
 	public function store()
 	{
-	
+
 	$reservacion = new Reservation;
 		$reservacion->papeleta= Input::get('numP');
 		$reservacion->destino = Input::get('des');
@@ -111,10 +111,11 @@ class PlanesController extends \BaseController {
 	 */
 	public function edit($papeleta)
 	{
-		
+
 		     $plane =  DB::table('planes')->where('papeleta', $papeleta)->first();
       		 $noPapel=$plane->papeleta;
              $reservacion = DB::table('reservations')->where('papeleta', $noPapel)->first();
+             Session::put('papeleta', $papeleta);
 		    return View::make('planes.edit')->with('plane',$plane)->with('reservacion',$reservacion);
 	}
 
@@ -137,10 +138,10 @@ class PlanesController extends \BaseController {
 			$plane->itinerario = Input::get('itinerario');
 			$plane->FechaSalida = Input::get('fechaS');
 			$plane->FechaRegreso = Input::get('fechaR');
-			 $noPapeleta=$plane->papeleta;	
+			 $noPapeleta=$plane->papeleta;
             $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
             $reservacion->destino = Input::get('des');
-		    $reservacion->operador = Input::get('ope'); 
+		    $reservacion->operador = Input::get('ope');
 		    $reservacion->tipo = 'Avion';
 			$reservacion->estado = 'Activa';
 			$reservacion->costoPax = Input::get('costoP');
@@ -148,8 +149,8 @@ class PlanesController extends \BaseController {
 			$reservacion->observacionesPax = Input::get('obPax');
 			$reservacion->observacionesAgencia = Input::get('obAg');
 			$reservacion->tiempoLimite= Input::get('tmLim');
-       
- 	   if ($plane->save()) {  
+
+ 	   if ($plane->save()) {
 		$reservacion->save();
 			Session::flash('message','Actualizado correctamente!');
 			Session::flash('class','success');
@@ -157,7 +158,7 @@ class PlanesController extends \BaseController {
 			Session::flash('message','Ha ocurrido un error!');
 			Session::flash('class','danger');
 		}
-   
+
    return Redirect::to('aviones/edit/'.$noPapeleta);
 	}
 
@@ -170,7 +171,7 @@ class PlanesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		
+
 		$hotel = Hotel::find($id);
 
 		if ($hotel->delete()) {

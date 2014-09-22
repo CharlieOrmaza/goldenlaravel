@@ -60,6 +60,9 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('clientes/lista2/{papeleta}', 'ClientesController@papeletaxclientesTabla2');
 	Route::get('clientes/cancelar/{papeletaXClientes_id}', 'ClientesController@cancelar');
 
+
+	Route::resource('traslados', 'TranslationsController');
+
 });
 
 
