@@ -22,16 +22,23 @@
 						<th>Estado</th>
 						<th>Acciones</th>
 					</tr>
+					<?php $papeletaTemp='';$miTipo=''; ?>
 				</thead>
 				<tbody>
 				@if (!empty($consultas))
 					@foreach($consultas as $consulta)
-					{{$miTipo='';}}
+						@if($consulta->papeleta == $papeletaTemp)
+							<?php continue; ?>
+						@else
+							<?php $papeletaTemp=$consulta->papeleta;?>
+						@endif
 						<tr>
 							@if($consulta->tipo == 'Hotel')
 								<?php $miTipo='hoteles'; ?>
 							@elseif($consulta->tipo =='Avion')
 								<?php $miTipo ='aviones'; ?>
+							@elseif($consulta->tipo =='Hotel + Avion')
+								<?php $miTipo ='hotelAvion'; ?>
 							@endif
 							<td>{{ $consulta->id }}</td>
 							<td><a href="/{{$miTipo}}/show/{{ $consulta->papeleta }}"><span class="label label-info">{{ $consulta->papeleta }}</span></a></td>

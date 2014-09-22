@@ -1,1 +1,0 @@
-C:\xampp\htdocs\goldenlaravel\app/views/pagos/edit.blade.php

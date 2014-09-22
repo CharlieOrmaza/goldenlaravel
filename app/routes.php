@@ -13,6 +13,10 @@
 
 Route::group(array('before' => 'auth'), function()
 {
+<<<<<<< HEAD
+=======
+});
+>>>>>>> origin/master
 Route::get('clientes/nuevopax/create', 'ClientesController@nuevoPax');
 Route::post('clientes/nuevopax/store', 'ClientesController@nuevoPaxStore');
 Route::post('clientes/update/{id}','ClientesController@update');

@@ -2,6 +2,8 @@
 @section('content')
 @include ('includes.menu')
 
+
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('input[type="radio"]').click(function(){
@@ -46,14 +48,30 @@
   		</div>
 
   		<div class="panel-body">
-  			@if (!empty($clientes) and !empty($reservacion))
+  			@if (!empty($reservacion))
   				@foreach($reservacion as $res)
+  					<script type="text/javascript">
+						$(document).ready(function(){
+							$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
+
+							$.get("/clientes/lista/{{ $res->papeleta }}", function (data) {
+								$('#tablaClientes').html(data);
+							});
+						});
+					</script>
   					<p>
-		  				Papeleta: <strong>{{ $res->papeleta }}</strong>
-		  			</p>
-		  			<p>
-		  				Nombre Pax: <strong>{{ $clientes->nombre }}</strong>
-		  			</p>
+						<h3>Papeleta</h3><hr>
+					</p>
+	  		        <p>
+	  		        	Papeleta: <strong>{{ $res->papeleta }}</strong>
+					</p>
+	  			    <p>
+						<h3>Datos Pax</h3><hr>
+					</p>
+						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
+					<p>
+						<h3>Datos de Reservacion</h3><hr>
+					</p>
 		  			<p>
 		  				Costo Pax: <strong>{{ $res->costoPax }}</strong>
 		  				<?php $costoPax= $res->costoPax; ?>
@@ -65,7 +83,7 @@
 		  			<p>
 		  				Tiempo Limite: <strong>{{ $res->tiempoLimite }}(aaaa-mm-dd)</strong>
 		  			</p>
-
+					<hr>
 		  			@if($res->estado=='Activa')
 	  				<div class="panel panel-info">
 				  		<div class="panel-heading">
