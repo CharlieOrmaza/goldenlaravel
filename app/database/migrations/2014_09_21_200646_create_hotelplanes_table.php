@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateHotelsTable extends Migration {
+class CreateHotelplanesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,19 @@ class CreateHotelsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('hotels', function(Blueprint $table)
+		Schema::create('hotelplanes', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('noPapeleta');
-            $table->string('destino');
+			$table->string('papeleta');
+			$table->string('destino');
 			$table->string('operador');
+			$table->string('aerolinea');
+			$table->string('clave');
+			$table->string('equipaje');
+			$table->string('tarifa');
+			$table->string('itinerario');
+			$table->date('FechaSalida');
+			$table->date('FechaRegreso');
 			$table->string('nombreHotel');
 			$table->date('fechaDeEntrada');
 			$table->date('fechaDeSalida');
@@ -38,7 +45,7 @@ class CreateHotelsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('hotels');
+		Schema::drop('hotelplanes');
 	}
 
 }

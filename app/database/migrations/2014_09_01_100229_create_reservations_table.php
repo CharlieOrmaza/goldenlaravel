@@ -25,7 +25,6 @@ class CreateReservationsTable extends Migration {
 			$table->date('tiempoLimite');
 			$table->string('tipo');
 			$table->string('estado');
-			$table->integer('idCliente');
 			$table->timestamps();
 		});
 	}
