@@ -1,1 +1,0 @@
-C:\xampp\htdocs\goldenlaravel\app/views/pagos/show.blade.php

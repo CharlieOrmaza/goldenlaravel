@@ -23,14 +23,10 @@ class PagosController extends \BaseController {
 	{
 		$id=0;
 		$reservacion= Reservation::where('papeleta', '=', $papeleta)->get();
-		foreach ($reservacion as $key => $value) {
-			$id=$value->idCliente;
-		}
-		$clientes = Cliente::find($id);
 		$pagos = Pago::where('papeleta', '=', $papeleta)->get();
 
         //return View::make('clientes.index')->with('clientes',$clientes);
-		return View::make('pagos.create')->with('clientes',$clientes)->with('reservacion',$reservacion)->with('pagos',$pagos);
+		return View::make('pagos.create')->with('reservacion',$reservacion)->with('pagos',$pagos);
 	}
 
 	/**

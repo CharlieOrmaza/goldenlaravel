@@ -151,8 +151,6 @@ class HotelsController extends BaseController {
 	public function update($id)
 	{
 		$hotel = Hotel::find($id);
-
-			$hotel->idCliente = '1';
 			$hotel->destino = Input::get('des');
 			$hotel->operador = Input::get('ope');
 			$hotel->nombreHotel = Input::get('nameH');
