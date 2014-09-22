@@ -16,7 +16,7 @@ class HotelplanesController extends \BaseController {
 		$papeleta->save();
 		$reservacion = new Reservation;
 		$reservacion->papeleta= $noPapeleta;
-		$reservacion->tipo = 'Hotel';
+		$reservacion->tipo = 'Hotel+Avion';
 		$reservacion->estado = 'Activa';
 		if ($reservacion->save()) {
 			$hotelplane = new Hotelplane;
@@ -112,7 +112,7 @@ class HotelplanesController extends \BaseController {
             $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
             $reservacion->destino = Input::get('des');
 		    $reservacion->operador = Input::get('ope');
-		    $reservacion->tipo = 'Avion';
+		    $reservacion->tipo = 'Hotel+Avion';
 			$reservacion->estado = 'Activa';
 			$reservacion->costoPax = Input::get('costoP');
 			$reservacion->costoNeto = Input::get('costoN');

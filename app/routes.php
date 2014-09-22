@@ -38,6 +38,13 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('aviones/destroy/{id}','PlanesController@destroy');
 	Route::resource('aviones', 'PlanesController');
 
+    Route::post('traslados/update/{id}','TranslationsController@update');
+	Route::post('traslados/store','TranslationsController@store');
+	Route::get('traslados/show/{id}','TranslationsController@show');
+	Route::get('traslados/edit/{id}','TranslationsController@edit');
+	Route::get('traslados/destroy/{id}','TranslationsController@destroy');
+	Route::resource('traslados', 'TranslationsController');
+
 	Route::post('hotelAvion/update/{id}','HotelplanesController@update');
 	Route::post('hotelAvion/store','HotelplanesController@store');
 	Route::get('hotelAvion/show/{id}','HotelplanesController@show');

@@ -90,7 +90,7 @@
 
 	        @else
 	        <p>
-	          No existe información para éste Hotel.
+	          No existe información para éste Avion.
 	        </p>
 	        @endif
 	        <a href="/consultas" class="btn btn-default">Regresar</a>

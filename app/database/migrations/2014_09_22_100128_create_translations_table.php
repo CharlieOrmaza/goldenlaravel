@@ -15,10 +15,11 @@ class CreateTranslationsTable extends Migration {
 		Schema::create('translations', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('sencilloRedondo');
+			$table->string('papeleta');
+			$table->string('tipo');
 			$table->integer('numeroPersonas');
-			$table->string('de');
-			$table->string('a');
+			$table->string('origen');
+			$table->string('destino');
 			$table->timestamps();
 		});
 	}

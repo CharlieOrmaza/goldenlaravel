@@ -77,14 +77,14 @@
   		<div class="panel-body">
   			@if (!empty($plane))
     			<form method="post" action="/aviones/update/{{ $plane->id }}">
-		        <p>
+		            <p>
 						<h3>Papeleta</h3><hr>
 					</p>
 		          	<p>
 		            	Numero de Papeleta: <b>{{Session::get('papeleta')}}</b>
 		          	</p>
 		          	<hr>
-	  			     <p>
+	  			    <p>
 					<h4>Datos del Pax</h4>
 				    </p>
 					    <button class="btn btn-primary btn-lg" id="nuevoCliente" >
@@ -109,9 +109,9 @@
 						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
 		            
 		          	<hr>
-	  			<p>
+	  			    <p>
 					<h4>Datos del Vuelo</h4>
-				</p>
+				    </p>
                      <p>
 		            	Destino:<input  value="{{ $plane->destino  }}" type="text" name="des"  placeholder="Destino" class="form-control" required>
 		          	</p>
@@ -134,7 +134,7 @@
 		          	
 		          	<p>Itinerario (Ciudad Salida - Ciudad Destino - Fecha y hora de vuelo "DD/MM/AAAA - HH:MM:SS" ):
 
-				   <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $plane->itinerario }}</textarea>
+				    <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $plane->itinerario }}</textarea>
 		            	 
 		          	</p>
 		          	<p>
@@ -143,36 +143,33 @@
 		          	<p>
 		            	Fecha de Regreso: <input value="{{ $plane->FechaRegreso}}" type="date" name="fechaR"  class="form-control" required>
 		          	</p>
-		          		<hr>
-	  			<p>
+		          	<hr>
+	  				<p>
 					<h4>Datos del Costo</h4>
-				</p>
-				 <p>
-		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
-		         </p>
-	  			<p>
-	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN" placeholder="Costo Neto"  class="form-control" required>
-	  			</p>
-	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
-	  			</p>
-	  			<p>
-	  			Observaciones Pax:
-				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
-	  			</p>
-	  			<p>
-	  			Observaciones Agencia:
-	  			<textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
-	  			</p>
-	  			
-
-
-		          	<input type="submit" value="Actualizar" class="btn btn-success">
-          	@else
-	          	<p>
-	            	No existe información para este Hotel.
-	          	</p>
-          	@endif
+			 		</p>
+					<p>
+		              Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
+		         	</p>
+	  			 	<p>
+	  			      Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN" placeholder="Costo Neto"  class="form-control" required>
+	  				</p>
+	  			     <p>
+	  				   Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
+	  			     </p>
+	  				 <p>
+	  			      Observaciones Pax:
+				        <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
+	  			     </p>
+	  			      <p>
+	  			      Observaciones Agencia:
+	  		      	  <textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
+	  			      </p>
+		           	<input type="submit" value="Actualizar" class="btn btn-success">
+            @else
+	              	 <p>
+	                	No existe información para este Hotel.
+	             	</p>
+          	 @endif
         		<a href="/consultas" class="btn btn-default">Regresar</a>
       			</form>
 		</div>

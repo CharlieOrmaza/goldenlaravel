@@ -4,7 +4,6 @@
 
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
@@ -68,25 +67,24 @@
 
 	});
 </script>
-
 	<h1>Traslados</h1>
 
 	<div class="panel panel-success">
   		<div class="panel-heading">
   			<h4>Actualizar Traslado</h4>
   		</div>
-
+                 
   		<div class="panel-body">
-  			@if (!empty($traslado))
-    			<form method="post" action="/hoteles/update/{{ $traslado->id }}">
-		          	<p>
+  			@if (!empty($translation))
+    			<form method="post" action="/traslados/update/{{ $translation->id }}">
+		            <p>
 						<h3>Papeleta</h3><hr>
 					</p>
 		          	<p>
 		            	Numero de Papeleta: <b>{{Session::get('papeleta')}}</b>
 		          	</p>
 		          	<hr>
-	  			     <p>
+	  			    <p>
 					<h4>Datos del Pax</h4>
 				    </p>
 					    <button class="btn btn-primary btn-lg" id="nuevoCliente" >
@@ -109,69 +107,52 @@
 						  </div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->
 						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
+		            
 		          	<hr>
-	  			<p>
-					<h4>Datos del Hotel</h4>
-				</p>
-		          	<p>
-		            	Hotel:<input value="{{ $traslado->nombreHotel }}" type="text" name="nameH"  class="form-control" required>
+	  			    <p>
+					<h4>Datos del Traslado</h4>
+				    </p>
+				    <p>
+		            	Tipo de traslado: <input value="{{ $translation->tipo  }}" type="text" placeholder="Sencillo o Redondo" name="tipo"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Destino:<input  value="{{ $traslado->destino  }}" type="text" name="des"  class="form-control" required>
+		            	Numero de personas: <input value="{{ $translation->numeroPersonas }}" type="number"  name="numero" placeholder="Numero de Personas" class="form-control" required>
 		          	</p>
-		          	<p>
-		            	Operador:<input value="{{ $traslado->operador}}" type="text" name="ope"  class="form-control" required>
+                    <p>
+		            	Origen:<input value="{{ $translation->origen}}" type="text" name="ori" placeholder="Origen" class="form-control" required>
 		          	</p>
-		          	<p>
-		            	Fecha de Entrada:<input value="{{ $traslado->fechaDeEntrada }}" type="date" name="fechaE"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Fecha de Salida: <input value="{{ $traslado->fechaDeSalida }}" type="date" name="fechaS"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Habitaciones Sencillas:<input value="{{ $traslado->sgl }}" type="number" name="habS" class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Dobles:<input value="{{ $traslado->dbl }}" type="number" name="habD"  class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Triples:<input value="{{ $traslado->tpl }}" type="number" name="habT"  class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Cuadruples:<input value="{{ $traslado->cpl }}" type="number" name="habC"  class="form-control" >
-		          	</p>
-		             <p>
-		            	Otras Habitaciones:<input value="{{ $traslado->otros }}" type="number" name="habO"  class="form-control" >
-		          	</p>
-		          		<hr>
-	  			<p>
-					<h4>Datos del Costo</h4>
-				</p>
-				 <p>
-		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP"  class="form-control" required>
-		         </p>
-	  			<p>
-	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN"  class="form-control" required>
-	  			</p>
-	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim"  class="form-control" required>
-	  			</p>
-	  			<p>
-					Observaciones Pax:
-				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
 
-				</p>
-				<p>
-					Observaciones Agencia:
-					<textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
-				</p>
-		          	<input type="submit" value="Actualizar" class="btn btn-success">
-          	@else
-	          	<p>
-	            	No existe información para este Hotel.
-	          	</p>
-          	@endif
-        		<a href="/" class="btn btn-default" > Regresar</a>
+                     <p>
+		            	Destino:<input  value="{{ $translation->destino  }}" type="text" name="des"  placeholder="Destino" class="form-control" required>
+		          	</p>
+		          	<hr>
+	  				<p>
+					<h4>Datos del Costo</h4>
+			 		</p>
+					<p>
+		              Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
+		         	</p>
+	  			 	<p>
+	  			      Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN" placeholder="Costo Neto"  class="form-control" required>
+	  				</p>
+	  			     <p>
+	  				   Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
+	  			     </p>
+	  				 <p>
+	  			      Observaciones Pax:
+				        <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
+	  			     </p>
+	  			      <p>
+	  			      Observaciones Agencia:
+	  		      	  <textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
+	  			      </p>
+		           	<input type="submit" value="Actualizar" class="btn btn-success">
+            @else
+	              	 <p>
+	                	No existe información para este Hotel.
+	             	</p>
+          	 @endif
+        		<a href="/consultas" class="btn btn-default">Regresar</a>
       			</form>
 		</div>
 	</div>
