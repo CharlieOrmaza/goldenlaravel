@@ -27,6 +27,7 @@ class HotelsController extends BaseController {
 		}else {
 			Session::flash('message','Ha ocurrido un error!');
 			Session::flash('class','danger');
+			return Redirect::to('consultas');
 		}
 		//return Redirect::to('hoteles/edit/'.$noPapeleta);
 	}
@@ -39,6 +40,7 @@ class HotelsController extends BaseController {
 	 */
 	public function create()
 	{
+		
 		return Redirect::to('hoteles');
 	}
 
@@ -117,12 +119,8 @@ class HotelsController extends BaseController {
 	public function show($noPapeleta)
 	{
       		 $hotel =  DB::table('hotels')->where('noPapeleta', $noPapeleta)->first();
-      		 $noPapel=$hotel->noPapeleta;
-      		 $id=$hotel->idCliente;
-      		 $cliente = Cliente::find($id);
-      		 $tipo = 'Hotel';
               $reservacion = DB::table('reservations')->where('papeleta', $noPapeleta)->first();
-		return View::make('hotels.show')->with('hotel',$hotel)->with('reservacion',$reservacion)->with('cliente',$cliente);
+		return View::make('hotels.show')->with('hotel',$hotel)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -151,8 +149,6 @@ class HotelsController extends BaseController {
 	public function update($id)
 	{
 		$hotel = Hotel::find($id);
-
-			$hotel->idCliente = '1';
 			$hotel->destino = Input::get('des');
 			$hotel->operador = Input::get('ope');
 			$hotel->nombreHotel = Input::get('nameH');

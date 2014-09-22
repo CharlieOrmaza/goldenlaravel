@@ -10,7 +10,25 @@ class PlanesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('planes.create');
+		$papeleta= Papeleta::find(1);
+		$noPapeleta= $papeleta->papeleta;
+		$papeleta->papeleta = $noPapeleta+1;
+		$papeleta->save();
+		$reservacion = new Reservation;
+		$reservacion->papeleta= $noPapeleta;
+		$reservacion->tipo = 'Avion';
+		$reservacion->estado = 'Activa';
+		if ($reservacion->save()) {
+			$plane = new Plane;
+			$plane->papeleta = $noPapeleta;
+			$plane->save();
+
+			return Redirect::to('aviones/edit/'.$noPapeleta);
+		}else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+			return Redirect::to('consultas');
+		}
 	}
 
 	/**
@@ -21,7 +39,7 @@ class PlanesController extends \BaseController {
 	 */
 	public function create()
 	{
-	  return View::make('planes.create');	
+	  
 	}
 
 	/**sewly created resource in storage.
@@ -97,7 +115,6 @@ class PlanesController extends \BaseController {
 		     $plane =  DB::table('planes')->where('papeleta', $papeleta)->first();
       		 $noPapel=$plane->papeleta;
              $reservacion = DB::table('reservations')->where('papeleta', $noPapel)->first();
-		    
 		    return View::make('planes.edit')->with('plane',$plane)->with('reservacion',$reservacion);
 	}
 
@@ -111,7 +128,6 @@ class PlanesController extends \BaseController {
 	public function update($id)
 	{
 		    $plane = Plane::find($id);
-			$plane->papeleta = Input::get('numP');
 			$plane->destino = Input::get('des');
 			$plane->operador = Input::get('ope');
 			$plane->aerolinea = Input::get('aero');

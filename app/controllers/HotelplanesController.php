@@ -10,7 +10,24 @@ class HotelplanesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('hotelAvion.edit');
+		$papeleta= Papeleta::find(1);
+		$noPapeleta= $papeleta->papeleta;
+		$papeleta->papeleta = $noPapeleta+1;
+		$papeleta->save();
+		$reservacion = new Reservation;
+		$reservacion->papeleta= $noPapeleta;
+		$reservacion->tipo = 'Hotel';
+		$reservacion->estado = 'Activa';
+		if ($reservacion->save()) {
+			$hotelplane = new Hotelplane;
+			$hotelplane->papeleta = $noPapeleta;
+			$hotelplane->save();
+
+			return Redirect::to('hotelAvion/edit/'.$noPapeleta);
+		}else {
+			Session::flash('message','Ha ocurrido un error!');
+			Session::flash('class','danger');
+		}
 	}
 
 	/**

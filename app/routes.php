@@ -13,7 +13,6 @@
 
 Route::group(array('before' => 'auth'), function()
 {
-});	
 Route::get('clientes/nuevopax/create', 'ClientesController@nuevoPax');
 Route::post('clientes/nuevopax/store', 'ClientesController@nuevoPaxStore');
 Route::post('clientes/update/{id}','ClientesController@update');
@@ -57,8 +56,9 @@ Route::resource('pagos', 'PagosController');
 
 
 Route::get('clientes/lista/{papeleta}', 'ClientesController@papeletaxclientesTabla');
+Route::get('clientes/lista2/{papeleta}', 'ClientesController@papeletaxclientesTabla2');
 Route::get('clientes/cancelar/{papeletaXClientes_id}', 'ClientesController@cancelar');
-
+});	
 
 
 Route::get('salir', 'UsersController@destroy');

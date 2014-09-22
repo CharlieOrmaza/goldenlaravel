@@ -158,6 +158,18 @@ class ClientesController extends BaseController {
 
 	}
 
+    public function papeletaxclientesTabla2($papeleta=2000)
+	{
+		//$idClientes= papeletaxclientes::where("papeleta","=",$papeleta)->get();
+		$consultas= DB::select('select clientes.id as idCliente, clientes.nombre,
+		 clientes.direccion, clientes.telefono, clientes.email, clientes.fechaDeNacimiento,
+		 clientes.referencia, clientes.pasaporte, papeletaXClientes.id as papeletaXClientes_id,
+		 papeletaXClientes.papeleta from clientes,papeletaxclientes
+		 where clientes.id=papeletaXClientes.idCliente and papeletaxclientes.papeleta='.$papeleta.';');
+		return View::make('clientes.tabla3')->with('consultas',$consultas);
+
+	}
+
 	public function buscar($papeleta=2000)
 	{
 

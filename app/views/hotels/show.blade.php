@@ -2,6 +2,10 @@
 @section('content')
 @include ('includes.menu')
 
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+
 	<h1>Hoteles</h1>
 
 	<div class="panel panel-success">
@@ -13,33 +17,32 @@
 	  		@if (!empty($hotel))
 	  			<p>
 	  				Numero de Papeleta: <strong>{{ $hotel->noPapeleta }}</strong>
-	  			</p>
+	  			 </p>
 	  			<hr>
-	  			<p>
+	  			     <p>
 					<h4>Datos del Pax</h4>
+				    </p>
+			    	<script type="text/javascript">
+						$(document).ready(function(){
+							$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
+
+							$.get("/clientes/lista2/{{$hotel->noPapeleta }}", function (data) {
+								$('#tablaClientes').html(data);
+							});
+
+						});
+					</script>
+						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
+		          	<hr>
+	  			<p>
+					<h4>Datos del Hotel</h4>
 				</p>
-	  			<p>
-	  				Nombre: <strong>{{ $cliente->nombre }}</strong>
-	  			</p>
-	  			<p>
-	  				Telefono: <strong>{{ $cliente->telefono }}</strong>
-	  			</p>
-	  			<p>
-	  				Email: <strong>{{ $cliente->email }}</strong>
-	  			</p>
-	  			<p>
-	  				Referencia: <strong>{{ $cliente->referencia }}</strong>
-	  			</p>
-	  			<p>
+				<p>
 	  				Destino: <strong>{{ $hotel->destino }}</strong>
 	  			</p>
 	  			<p>
 	  				Operador: <strong>{{ $hotel->operador}}</strong>
 	  			</p>
-	  			<hr>
-	  			<p>
-					<h4>Datos del Hotel</h4>
-				</p>
 	  			<p>
 	  				Hotel: <strong>{{ $hotel->nombreHotel }}</strong>
 	  			</p>
