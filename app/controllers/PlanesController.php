@@ -115,6 +115,7 @@ class PlanesController extends \BaseController {
 		     $plane =  DB::table('planes')->where('papeleta', $papeleta)->first();
       		 $noPapel=$plane->papeleta;
              $reservacion = DB::table('reservations')->where('papeleta', $noPapel)->first();
+             Session::put('papeleta', $papeleta);
 		    return View::make('planes.edit')->with('plane',$plane)->with('reservacion',$reservacion);
 	}
 

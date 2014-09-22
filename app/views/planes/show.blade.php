@@ -1,6 +1,8 @@
 @extends('layouts.default')
 @section('content')
 @include ('includes.menu')
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 	<h1>Vuelos</h1>
 
@@ -15,20 +17,32 @@
 	  				Numero de Papeleta: <strong>{{ $plane->papeleta }}</strong>
 	  			</p>
 	  			<hr>
-	  			<p>
+	  			
+	  			     <p>
 					<h4>Datos del Pax</h4>
-				</p>
-	  		
+				    </p>
+			    	<script type="text/javascript">
+						$(document).ready(function(){
+							$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
+
+							$.get("/clientes/lista2/{{$plane->papeleta }}", function (data) {
+								$('#tablaClientes').html(data);
+							});
+
+						});
+					</script>
+						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
+
+	  			<hr>
 	  			<p>
+					<h4>Datos del Vuelo</h4>
+				</p>
+				<p>
 	  				Destino: <strong>{{ $plane->destino }}</strong>
 	  			</p>
 	  			<p>
 	  				Operador: <strong>{{ $plane->operador}}</strong>
 	  			</p>
-	  			<hr>
-	  			<p>
-					<h4>Datos del Vuelo</h4>
-				</p>
 	  			<p>
 	  				Aerolinea: <strong>{{$plane->aerolinea }}</strong>
 	  			</p>

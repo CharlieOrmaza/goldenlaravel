@@ -113,48 +113,48 @@
 					<h4>Datos del Vuelo</h4>
 				</p>
                      <p>
-		            	Destino:<input  value="{{ $plane->destino  }}" type="text" name="des"  class="form-control" required>
+		            	Destino:<input  value="{{ $plane->destino  }}" type="text" name="des"  placeholder="Destino" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Operador:<input value="{{ $plane->operador}}" type="text" name="ope"  class="form-control" required>
+		            	Operador:<input value="{{ $plane->operador}}" type="text" name="ope" placeholder="Operador" class="form-control" required>
 		          	</p>
 
 		          	<p>
-		            	Aerolinea: <input value="{{ $plane->aerolinea  }}" type="text" name="aero"  class="form-control" required>
+		            	Aerolinea: <input value="{{ $plane->aerolinea  }}" type="text" placeholder="Aerolinea" name="aero"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Clave: <input value="{{ $plane->clave }}" type="text" name="clave"  class="form-control" required>
+		            	Clave: <input value="{{ $plane->clave }}" type="text" placeholder="Clave" name="clave" placeholder="" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Equipaje: <input value="{{ $plane->tarifa }}" type="text" name="equipaje"  class="form-control" required>
+		            	Equipaje: <input value="{{ $plane->tarifa }}" type="text" placeholder="Equipaje" name="equipaje"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Tarifa: <input value="{{ $plane->tarifa }}" type="text" name="tarifa" class="form-control" >
+		            	Tarifa: <input value="{{ $plane->tarifa }}" type="text" placeholder="Tarifa" name="tarifa" class="form-control" required>
 		          	</p>
 		          	
-		          	<p>Itinerario:
+		          	<p>Itinerario (Ciudad Salida - Ciudad Destino - Fecha y hora de vuelo "DD/MM/AAAA - HH:MM:SS" ):
 
 				   <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $plane->itinerario }}</textarea>
 		            	 
 		          	</p>
 		          	<p>
-		            	Fecha de Salida: <input value="{{ $plane->FechaSalida }}" type="date" name="fechaS"  class="form-control" >
+		            	Fecha de Salida: <input value="{{ $plane->FechaSalida }}" type="date" name="fechaS"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Regreso: <input value="{{ $plane->FechaRegreso}}" type="date" name="fechaR"  class="form-control" >
+		            	Fecha de Regreso: <input value="{{ $plane->FechaRegreso}}" type="date" name="fechaR"  class="form-control" required>
 		          	</p>
 		          		<hr>
 	  			<p>
 					<h4>Datos del Costo</h4>
 				</p>
 				 <p>
-		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP"  class="form-control" required>
+		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
 		         </p>
 	  			<p>
-	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN"  class="form-control" required>
+	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN" placeholder="Costo Neto"  class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim"  class="form-control" required>
+	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
 	  			</p>
 	  			<p>
 	  			Observaciones Pax:

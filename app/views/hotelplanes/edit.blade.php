@@ -2,9 +2,10 @@
 @section('content')
 @include ('includes.menu')
 
-<script type="text/javascript" src="/js/jquery.js"></script>
+
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaClientes').html('<img src="/img/preloader-01.gif">');
@@ -68,7 +69,7 @@
 
 	});
 </script>
-	<h1>Hoteles y Aviones</h1>
+	<h1>Hoteles + Avion</h1>
 
 	<div class="panel panel-success">
   		<div class="panel-heading">
@@ -78,7 +79,7 @@
 					<h3>Papeleta</h3><hr>
 				</p>
   		        <p>
-  		        	<b>{{Session::get('papeleta')}}</b>
+  		        	Numero de Papeleta: <b>{{Session::get('papeleta')}}</b>
 				</p>
   			    <p>
 					<h3>Datos del Pax</h3><hr>
@@ -116,59 +117,61 @@
 					<h4>Datos del Hotel</h4>
 				</p>
 		          	<p>
-		            	Destino:<input  value="{{ $hotelplane->destino  }}" type="text" name="des"  class="form-control" required>
+		            	Destino:<input  value="{{ $hotelplane->destino  }}" type="text" name="des" placeholder="Destino" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Operador:<input value="{{ $hotelplane->operador}}" type="text" name="ope"  class="form-control" required>
+		            	Operador:<input value="{{ $hotelplane->operador}}" type="text" name="ope" placeholder="Operador" class="form-control" required>
 		          	</p>
 
 		          	<p>
-		            	Hotel:<input value="{{ $hotelplane->nombreHotel }}" type="text" name="nameH"  class="form-control" required>
+		            	Hotel:<input value="{{ $hotelplane->nombreHotel }}" type="text" name="nameH"   placeholder="Nombre del Hotel" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Entrada:<input value="{{ $hotelplane->fechaDeEntrada }}" type="text" name="fechaE"  class="form-control" required>
+		            	Fecha de Entrada:<input value="{{ $hotelplane->fechaDeEntrada }}" type="date" name="fechaE"  placeholder="Fecha de Entrada al hotel" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Salida: <input value="{{ $hotelplane->fechaDeSalida }}" type="text" name="fechaS"  class="form-control" required>
+		            	Fecha de Salida: <input value="{{ $hotelplane->fechaDeSalida }}" type="date" name="fechaS"   placeholder="Fecha de Salida del hotel" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Habitaciones Sencillas:<input value="{{ $hotelplane->sgl }}" type="text" name="habS" class="form-control" >
+		            	Habitaciones Sencillas:<input value="{{ $hotelplane->sgl }}" type="text" name="habS"  placeholder="Numero de Habitaciones" class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Dobles:<input value="{{ $hotelplane->dbl }}" type="text" name="habD"  class="form-control" >
+		            	Habitaciones Dobles:<input value="{{ $hotelplane->dbl }}" type="text" name="habD"  placeholder="Numero de Habitaciones" class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Triples:<input value="{{ $hotelplane->tpl }}" type="text" name="habT"  class="form-control" >
+		            	Habitaciones Triples:<input value="{{ $hotelplane->tpl }}" type="text" name="habT" placeholder="Numero de Habitaciones" class="form-control" >
 		          	</p>
 		          	<p>
-		            	Habitaciones Cuadruples:<input value="{{ $hotelplane->cpl }}" type="text" name="habC"  class="form-control" >
+		            	Habitaciones Cuadruples:<input value="{{ $hotelplane->cpl }}" type="text" name="habC" placeholder="Numero de Habitaciones" class="form-control" >
 		          	</p>
 		             <p>
-		            	Otras Habitaciones:<input value="{{ $hotelplane->otros }}" type="text" name="habO"  class="form-control" >
+		            	Otras Habitaciones:<input value="{{ $hotelplane->otros }}" type="text" name="habO" placeholder="Numero de Habitaciones" class="form-control" >
 		          	</p>
 		          		<hr>
 	  			<h4>Datos del Vuelo</h4>
 				</p>
 		          	<p>
-		            	Aerolinea: <input value="{{ $hotelplane->aerolinea  }}" type="text" name="aero"  class="form-control" required>
+		            	Aerolinea: <input value="{{ $hotelplane->aerolinea  }}" type="text" name="aero" placeholder="Aerolinea" class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Clave: <input value="{{ $hotelplane->clave }}" type="text" name="clave"  class="form-control" required>
+		            	Clave: <input value="{{ $hotelplane->clave }}" type="text" name="clave"  placeholder="Clave"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Equipaje: <input value="{{ $hotelplane->tarifa }}" type="text" name="equipaje"  class="form-control" required>
+		            	Equipaje: <input value="{{ $hotelplane->tarifa }}" type="text" name="equipaje" placeholder="Equipaje"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Tarifa: <input value="{{ $hotelplane->tarifa }}" type="text" name="tarifa" class="form-control" >
+		            	Tarifa: <input value="{{ $hotelplane->tarifa }}" type="text" name="tarifa" placeholder="Tarifa" class="form-control" >
+		          	</p>
+		          	<p>Itinerario (Ciudad Salida - Ciudad Destino - Fecha y hora de vuelo "DD/MM/AAAA - HH:MM:SS" ):
+
+				   <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $hotelplane->itinerario }}</textarea>
+		            	 
 		          	</p>
 		          	<p>
-		            	Itinerario: <input value="{{ $hotelplane->itinerario }}" type="text" name="itinerario"  class="form-control" >
+		            	Fecha de Salida del Vuelo: <input value="{{ $hotelplane->FechaSalida }}" type="date" name="fechaS" placeholder="Fecha de Salida"  class="form-control" required>
 		          	</p>
 		          	<p>
-		            	Fecha de Salida: <input value="{{ $hotelplane->FechaSalida }}" type="text" name="fechaS"  class="form-control" >
-		          	</p>
-		          	<p>
-		            	Fecha de Regreso: <input value="{{ $hotelplane->FechaRegreso}}" type="text" name="fechaR"  class="form-control" >
+		            	Fecha de Regreso del Vuelo: <input value="{{ $hotelplane->FechaRegreso}}" type="date" name="fechaR" placeholder="Fecha de Regreso" class="form-control" required>
 		          	</p>
 	  			<p>
 					<h4>Datos del Costo</h4>
@@ -180,13 +183,15 @@
 	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN"  class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="text" name="tmLim"  class="form-control" required>
+	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
 	  			</p>
 	  			<p>
-	  			Observaciones Pax:<input value="{{$reservacion->observacionesPax }}" type="text" name="obPax"  class="form-control" required>
+	  			Observaciones Pax:
+				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
 	  			</p>
 	  			<p>
-	  			Observaciones Agencia:<input value="{{ $reservacion->observacionesAgencia}}" type="text" name="obAg"  class="form-control" required>
+	  			Observaciones Agencia:
+	  			<textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
 	  			</p>
 	  			
 
