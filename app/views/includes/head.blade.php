@@ -3,24 +3,22 @@
 
 
 <!-- jS -->
-<script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>
 <script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.js"></script>
-<script type="text/javascript" charset="utf8" src="/js/bootstrap.js"></script>
-<script type="text/javascript" charset="utf8" src="/js/bootstrap.min.js"></script>
-
-
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="/dataTables/css/jquery.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/dataTables/TableTools/css/dataTables.tableTools.css">
+<script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>
 
 <!-- DataTables -->
 <script type="text/javascript" charset="utf8" src="/dataTables/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="/dataTables/TableTools/js/dataTables.tableTools.js"></script>
 
+
 <!-- CSS -->
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="/css/menu.css">
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="/dataTables/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="/dataTables/TableTools/css/dataTables.tableTools.css">
 
 <script type="text/javascript">
     $(document).ready( function () {

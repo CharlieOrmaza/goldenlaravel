@@ -177,7 +177,7 @@
 
 				<p>
 					<input type="submit" value="Guardar" class="btn btn-success">
-					<a href="/consultas" class="btn btn-default" > Regresar</a>
+					<a href="/" class="btn btn-default" > Regresar</a>
 				</p>
 
 

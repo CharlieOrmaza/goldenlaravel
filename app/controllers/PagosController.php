@@ -10,7 +10,6 @@ class PagosController extends \BaseController {
 	 */
 	public function index()
 	{
-
 		return View::make('pagos.index');
 	}
 
@@ -51,7 +50,6 @@ class PagosController extends \BaseController {
 		$pagos->cupon = Input::get('cupon');
 		$pagos->pagoDe = Input::get('tipoDePago');
 		$pagos->usuario = Auth::user()->name;
-		
 
 		if ($pagos->save()) {
 			Session::flash('message','Pago Guardado correctamente!');

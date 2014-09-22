@@ -11,12 +11,13 @@ class ConsultasController extends BaseController {
 	public function index()
 	{
 		//$consultas = Reservation::get();
-		$consultas = DB::select('select clientes.id as idCliente, clientes.nombre,reservations.id,
-		reservations.papeleta,reservations.tiempolimite,reservations.tipo,
-		reservations.estado,reservations.created_at from clientes,reservations where reservations.idCliente=clientes.id');
+		$consultas = DB::select('select distinct(reservations.papeleta), clientes.nombre, reservations.id,
+		reservations.tiempolimite,reservations.tipo, clientes.id as idCliente,
+		reservations.estado,reservations.created_at from clientes,reservations,papeletaxclientes where
+		 clientes.id=papeletaxclientes.idCliente and reservations.papeleta = papeletaxClientes.papeleta');
         return View::make('consultas.index')->with('consultas',$consultas);
+
 	}
 
-	
 
 }

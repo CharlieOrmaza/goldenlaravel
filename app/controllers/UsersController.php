@@ -11,11 +11,10 @@ class UsersController extends BaseController {
 	public function index()
 	{
 		if( Auth::check()){
-    		return Redirect::to('index');
+    		return View::make('index');
     	}else{
     		return View::make('login');
     	}
-
 	}
 
 	/**
@@ -28,7 +27,7 @@ class UsersController extends BaseController {
 	{
 		//
 	}
-      
+
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /users
@@ -45,11 +44,7 @@ class UsersController extends BaseController {
 
         if( Auth::attempt($userdata))
         {
-<<<<<<< HEAD
-            return Redirect::to('index');
-=======
             return Redirect::to('/');
->>>>>>> origin/master
         }else{
 			return Redirect::to('/')->with('flash_error','El Usuario o Contraseña son incorrectos');
         }

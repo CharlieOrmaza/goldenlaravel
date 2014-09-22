@@ -1,13 +1,31 @@
 <script type="text/javascript">
     $(document).ready( function () {
-        $('#table_id').DataTable();
+        $('#table_idA').DataTable();
 
     });
 </script>
+<script type="text/javascript">
+    $(document).ready( function () {
+        @if (!empty($clientes))
+		@foreach($clientes as $cliente)
+        $('#idCliente{{$cliente->id}}').click(function(e){
+			e.preventDefault();
+			$('#mensaje').hide();
+			$.get("/reservation/store/{{$cliente->id}}/{{Session::get('papeleta')}}", function (data) {
+				$('#mensaje').show();
+				$('#mensaje').html(data);
+				$('#row{{$cliente->id}}').hide();
+			});
+		});
+        @endforeach
+        @endif
+    });
+</script>
+
 <div class="alert alert-success" id="mensaje" style="display: none"></div>
 
 <div class="panel-body">
-	<table class="table table-striped" id="table_id">
+	<table class="table table-striped" id="table_idA">
 		<thead>
 			<tr>
 				<th>Nombre</th>
@@ -41,20 +59,4 @@
 
 </div>
 
-<script type="text/javascript">
-    $(document).ready( function () {
-        @if (!empty($clientes))
-		@foreach($clientes as $cliente)
-        $('#idCliente{{$cliente->id}}').click(function(e){
-			e.preventDefault();
-			$('#mensaje').hide();
-			$.get("/reservation/store/{{$cliente->id}}/{{Session::get('papeleta')}}", function (data) {
-				$('#mensaje').show();
-				$('#mensaje').html(data);
-				$('#row{{$cliente->id}}').hide();
-			});
-		});
-        @endforeach
-        @endif
-    });
-</script>
+
