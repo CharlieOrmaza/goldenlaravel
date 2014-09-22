@@ -75,6 +75,9 @@
   		<div class="panel-heading">
   			<h4>Agregar Hotel y Avion </h4>
   		</div>
+  		<div class="panel-body">
+  			@if (!empty($hotelplane))
+    			<form method="post" action="/hotelAvion/update/{{ $hotelplane->id }}">
         <p>
 					<h3>Papeleta</h3><hr>
 				</p>
@@ -108,11 +111,6 @@
   			    </p>
                 <p>
 
-
-  		<div class="panel-body">
-  			@if (!empty($hotelplane))
-    			<form method="post" action="/hotelAvion/update/{{ $hotelplane->id }}">
-		         
 	  			<p>
 					<h4>Datos del Hotel</h4>
 				</p>

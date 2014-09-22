@@ -22,7 +22,6 @@
 			e.preventDefault();
 			$('#modal1 .modal-title').html('Buscar Pax');
 			$('#modal1 .modal-body').html('<img src="/img/preloader-01.gif" height="20">');
-			
 			$('#modal1 .btn-primary').html('Nuevo Pax');
 			$('#modal1 .btn-default').html('Cerrar');
 			$('#modal1').modal();
