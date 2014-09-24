@@ -1,0 +1,1 @@
+C:\xampp\htdocs\goldenlaravel\app/views/cruceros/show.blade.php

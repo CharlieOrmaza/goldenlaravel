@@ -26,6 +26,12 @@ class CreateHotelsTable extends Migration {
 			$table->string('tpl');
 			$table->string('cpl');
 			$table->string('otros');
+			$table->string('junior');
+			$table->string('tarifa');
+			$table->string('plan');
+			$table->string('clave');
+			$table->string('menores12');
+			$table->string('confirmoHotel');
 			$table->timestamps();
 		});
 	}
