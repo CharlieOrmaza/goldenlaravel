@@ -21,7 +21,7 @@ class CreateAutobusesTable extends Migration {
 			$table->date('fechaSalida');
 			$table->date('fechaRegreso');
 			$table->string('tipo');
-			$table->string('orgineyHorario');
+			$table->string('origenyHorario');
 			$table->string('destinoyHorario');
 			$table->integer('numeroPersonas');
 			$table->timestamps();

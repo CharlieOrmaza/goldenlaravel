@@ -38,19 +38,37 @@
 					<h4>Datos del Hotel</h4>
 				</p>
 				<p>
+	  				Hotel: <strong>{{ $hotelplane->nombreHotel }}</strong>
+	  			</p>
+				<p>
+	  				Plan: <strong>{{ $hotelplane->plan }}</strong>
+	  			</p>
+	  			<p>
+	  				Confirmar Hotel: <strong>{{ $hotelplane->confirmoHotel }}</strong>
+	  			</p>
+				<p>
 	  				Destino: <strong>{{ $hotelplane->destino }}</strong>
 	  			</p>
 	  			<p>
 	  				Operador: <strong>{{ $hotelplane->operador}}</strong>
 	  			</p>
 	  			<p>
-	  				Hotel: <strong>{{ $hotelplane->nombreHotel }}</strong>
-	  			</p>
-	  			<p>
 	  				Fecha de Entrada: <strong>{{ $hotelplane->fechaDeEntrada }}</strong>
 	  			</p>
 	  			<p>
 	  				Fecha de Salida: <strong>{{ $hotelplane->fechaDeSalida }}</strong>
+	  			</p>
+	  			<p>
+	  				Junior: <strong>{{ $hotelplane->junior }}</strong>
+	  			</p>
+	  			<p>
+	  				Tarifa: <strong>{{ $hotelplane->tarifaHotel}}</strong>
+	  			</p>
+	  			<p>
+	  				Clave: <strong>{{ $hotelplane->claveHotel }}</strong>
+	  			</p>
+	  			<p>
+	  				Menores de 12: <strong>{{ $hotelplane->menores12 }}</strong>
 	  			</p>
 	  			<p>
 	  				Habitaciones Sencillas: <strong>{{ $hotelplane->sgl }}</strong>

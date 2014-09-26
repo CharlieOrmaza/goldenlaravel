@@ -148,7 +148,7 @@ class HotelsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$hotel = Hotel::find($id);
+			$hotel = Hotel::find($id);
 			$hotel->destino = Input::get('des');
 			$hotel->operador = Input::get('ope');
 			$hotel->nombreHotel = Input::get('nameH');
@@ -159,20 +159,25 @@ class HotelsController extends BaseController {
 			$hotel->tpl = Input::get('habT');
 			$hotel->cpl = Input::get('habC');
 			$hotel->otros = Input::get('habO');
-             $noPapeleta=$hotel->noPapeleta;
-          $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
-          $reservacion->destino = Input::get('des');
-		$reservacion->operador = Input::get('ope');
-		$reservacion->tipo = 'Hotel';
-		$reservacion->estado = 'Activa';
-		$reservacion->costoPax = Input::get('costoP');
-		$reservacion->costoNeto = Input::get('costoN');
-		$reservacion->observacionesPax = Input::get('obPax');
-		$reservacion->observacionesAgencia = Input::get('obAg');
-		$reservacion->tiempoLimite= Input::get('tmLim');
+			$hotel->junior = Input::get('junior');
+			$hotel->tarifa = Input::get('tarifa');
+			$hotel->clave = Input::get('clave');
+			$hotel->menores12 = Input::get('menores12');
+			$hotel->plan = Input::get('plan');
+            $hotel->confirmoHotel = Input::get('confirmoHotel');
+            $noPapeleta=$hotel->noPapeleta;
+      	    $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
+            $reservacion->destino = Input::get('des');
+			$reservacion->operador = Input::get('ope');
+			$reservacion->tipo = 'Hotel';
+			$reservacion->estado = 'Activa';
+			$reservacion->costoPax = Input::get('costoP');
+			$reservacion->costoNeto = Input::get('costoN');
+			$reservacion->observacionesPax = Input::get('obPax');
+			$reservacion->observacionesAgencia = Input::get('obAg');
+			$reservacion->tiempoLimite= Input::get('tmLim');
 
  	   if ($hotel->save()) {
-
 		$reservacion->save();
 			Session::flash('message','Actualizado correctamente!');
 			Session::flash('class','success');

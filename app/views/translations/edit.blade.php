@@ -128,30 +128,49 @@
 		          	<hr>
 	  				<p>
 					<h4>Datos del Costo</h4>
-			 		</p>
-					<p>
-		              Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP" placeholder="Costo Pax" class="form-control" required>
-		         	</p>
-	  			 	<p>
-	  			      Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN" placeholder="Costo Neto"  class="form-control" required>
-	  				</p>
-	  			     <p>
-	  				   Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
-	  			     </p>
-	  				 <p>
+	  				<table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				      			<th>
+				      				 Costo Pax: 
+				      			</th>
+				      			<th>
+				      				Costo Neto: 
+				      			</th>
+				      			<th>
+				      				Tiempo Limite: 
+				      			</th>
+				        	</tr>
+				        	<tr>
+				        		<th>
+				        			<input value="{{ $reservacion->costoPax }}" type="number" name="costoP" placeholder="Costo Pax" class="form-control" required>
+				        		</th>
+				        		<th>
+				      				<input value="{{ $reservacion->costoNeto}}" type="number" name="costoN" placeholder="Costo Neto"  class="form-control" required>
+				      			</th>
+				      			<th>
+				      				<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
+				      			</th>
+				        	</tr>
+				        <tbody>
+                    </table>
+	  				<p>
 	  			      Observaciones Pax:
 				        <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>
-	  			     </p>
-	  			      <p>
+	  			    </p>
+	  			    <p>
 	  			      Observaciones Agencia:
 	  		      	  <textarea name="obAg" placeholder="Observaciones Agencia" class="form-control" >{{ $reservacion->observacionesAgencia }}</textarea>
-	  			      </p>
+	  			    </p>
 		           	<input type="submit" value="Actualizar" class="btn btn-success">
             @else
-	              	 <p>
+	              	<p>
 	                	No existe información para este Hotel.
 	             	</p>
-          	 @endif
+          	@endif
         		<a href="/consultas" class="btn btn-default">Regresar</a>
       			</form>
 		</div>
