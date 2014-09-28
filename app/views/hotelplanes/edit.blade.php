@@ -163,7 +163,6 @@
 		          	<p>Itinerario (Ciudad Salida - Ciudad Destino - Fecha y hora de vuelo "DD/MM/AAAA - HH:MM:SS" ):
 
 				   <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $hotelplane->itinerario }}</textarea>
-		            	 
 		          	</p>
 		          	<p>
 		            	Fecha de Salida del Vuelo: <input value="{{ $hotelplane->FechaSalida }}" type="date" name="fechaS" placeholder="Fecha de Salida"  class="form-control" required>
