@@ -326,7 +326,7 @@
 		          	
 		          	<p>Itinerario (Ciudad Salida - Ciudad Destino - Fecha y hora de vuelo "DD/MM/AAAA - HH:MM:SS" ):
 
-<<<<<<< HEAD
+
 				   <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $hotelplane->itinerario }}</textarea>
 		          	</p>
 		          	<p>
@@ -341,10 +341,7 @@
 				 <p>
 		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP"  class="form-control" required>
 		         </p>
-=======
-				    <textarea  name="itinerario" placeholder="Itinerario" class="form-control" >{{ $hotelplane->itinerario }}</textarea>
-		          	</p>  	
->>>>>>> origin/master
+
 	  			<p>
 				<h4>Datos del Costo</h4>
 	  				<table class="table">
