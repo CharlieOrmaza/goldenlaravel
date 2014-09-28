@@ -10,7 +10,25 @@ class RentaAutosController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+			$papeleta= Papeleta::find(1);
+			$noPapeleta= $papeleta->papeleta;
+			$papeleta->papeleta = $noPapeleta+1;
+			$papeleta->save();
+			$reservacion = new Reservation;
+			$reservacion->papeleta= $noPapeleta;
+			$reservacion->tipo = 'RentaAuto';
+			$reservacion->estado = 'Activa';
+			if ($reservacion->save()) {
+				$rentaAutos = new Rentaauto;
+				$rentaAutos->papeleta = $noPapeleta;
+				$rentaAutos->save();
+				
+			}else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+				return Redirect::to('consultas');
+			}
+			
 	}
 
 	/**

@@ -10,7 +10,24 @@ class CrucerosController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+			$papeleta= Papeleta::find(1);
+			$noPapeleta= $papeleta->papeleta;
+			$papeleta->papeleta = $noPapeleta+1;
+			$papeleta->save();
+			$reservacion = new Reservation;
+			$reservacion->papeleta= $noPapeleta;
+			$reservacion->tipo = 'Crucero';
+			$reservacion->estado = 'Activa';
+			if ($reservacion->save()) {
+				$cruceros = new Crucero;
+				$cruceros->papeleta = $noPapeleta;
+				$cruceros->save();
+				return Redirect::to('cruceros/edit/'.$noPapeleta);
+			}else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+				return Redirect::to('consultas');
+			}		
 	}
 
 	/**
@@ -42,9 +59,11 @@ class CrucerosController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($papeleta)
 	{
-		//
+		     $cruceros =   DB::table('cruceros')->where('papeleta', $papeleta)->first();
+             $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
+		     return View::make('cruceros.show')->with('cruceros',$cruceros)->with('reservacion',$reservacion); 
 	}
 
 	/**
@@ -54,9 +73,12 @@ class CrucerosController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($papeleta)
 	{
-		//
+			 $cruceros =  DB::table('cruceros')->where('papeleta', $papeleta)->first();
+             $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
+		     Session::put('papeleta', $papeleta);
+		     return View::make('cruceros.edit')->with('cruceros',$cruceros)->with('reservacion',$reservacion); 
 	}
 
 	/**
@@ -68,7 +90,34 @@ class CrucerosController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+			$cruceros = Crucero::find($id);
+			$cruceros->operador = Input::get('ope');
+			$cruceros->naviera = Input::get('naviera');
+			$cruceros->nombreBarco = Input::get('nombreBarco');
+			$cruceros->descripcionRuta = Input::get('desR');
+			$cruceros->numeroPersonas = Input::get('numeroPersonas');
+			$noPapeleta=$cruceros->papeleta;
+            $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
+            $reservacion->destino = Input::get('des');
+		    $reservacion->operador = Input::get('ope');
+		    $reservacion->tipo = 'Crucero';
+			$reservacion->estado = 'Activa';
+			$reservacion->costoPax = Input::get('costoP');
+			$reservacion->costoNeto = Input::get('costoN');
+			$reservacion->observacionesPax = Input::get('obPax');
+			$reservacion->observacionesAgencia = Input::get('obAg');
+			$reservacion->tiempoLimite= Input::get('tmLim');
+
+ 	        if ($cruceros->save()) {
+	    	$reservacion->save();
+				Session::flash('message','Actualizado correctamente!');
+				Session::flash('class','success');
+	    	} else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+	    	}
+
+             return Redirect::to('cruceros/edit/'.$noPapeleta);
 	}
 
 	/**

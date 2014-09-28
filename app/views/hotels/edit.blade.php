@@ -75,9 +75,9 @@
   			<h4>Actualizar Hotel</h4>
   		</div>
 
-  		<div class="panel-body">
+  		    <div class="panel-body">
   			@if (!empty($hotel))
-    			<form method="post" action="/hoteles/update/{{ $hotel->id }}">
+    			    <form method="post" action="/hoteles/update/{{ $hotel->id }}">
 		          	<p>
 						<h3>Papeleta</h3><hr>
 					</p>
@@ -108,53 +108,187 @@
 						  </div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->
 						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
-		          	<hr>
-	  			<p>
-					<h4>Datos del Hotel</h4>
+		        <hr>
+	  		    <p>
+			    <h4>Datos del Hotel</h4>
 				</p>
-		          	<p>
-		            	Hotel:<input value="{{ $hotel->nombreHotel }}" type="text" name="nameH"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Destino:<input  value="{{ $hotel->destino  }}" type="text" name="des"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Operador:<input value="{{ $hotel->operador}}" type="text" name="ope"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Fecha de Entrada:<input value="{{ $hotel->fechaDeEntrada }}" type="date" name="fechaE"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Fecha de Salida: <input value="{{ $hotel->fechaDeSalida }}" type="date" name="fechaS"  class="form-control" required>
-		          	</p>
-		          	<p>
-		            	Habitaciones Sencillas:<input value="{{ $hotel->sgl }}" type="number" name="habS" class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Dobles:<input value="{{ $hotel->dbl }}" type="number" name="habD"  class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Triples:<input value="{{ $hotel->tpl }}" type="number" name="habT"  class="form-control" >
-		          	</p>
-		          	<p>
-		            	Habitaciones Cuadruples:<input value="{{ $hotel->cpl }}" type="number" name="habC"  class="form-control" >
-		          	</p>
-		             <p>
-		            	Otras Habitaciones:<input value="{{ $hotel->otros }}" type="number" name="habO"  class="form-control" >
-		          	</p>
-		          		<hr>
+				<table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				      			<th>
+				      				 Hotel: 
+				      			</th>
+				      			<th>
+				      				Plan:
+				      			</th> 
+				      			<th>
+				      				Confirmo Hotel:
+				      			</th> 
+				        	</tr>
+				        	<tr>
+				        		<th>
+				        			<input value="{{ $hotel->nombreHotel }}" type="text" name="nameH"  placeholder="Nombre del Hotel" class="form-control" required>
+				        		</th>
+				        		<th>
+				      				<input  value="{{ $hotel->plan  }}" type="text" name="plan" placeholder="Tipo de Plan" class="form-control" required>
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->confirmoHotel }}" type="text" name="confirmoHotel" placeholder="Confirmar hotel" class="form-control" >
+				      			</th>
+				        	</tr>
+
+				        <tbody>
+                 </table>
+				<table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				        	    <th>
+				      			    Destino: 
+				      			</th>
+				      			<th>
+				      				Operador:
+				      			</th>
+				      			<th>
+				      				 Fecha de Entrada: 
+				      			</th>
+				      			<th>
+				      			    Fecha de Salida: 
+				      			</th>
+				      			
+				        	</tr>
+				        	<tr>
+				        	    <th>
+				      				<input  value="{{ $hotel->destino  }}" type="text" name="des" placeholder="Destino" class="form-control" required>
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->operador}}" type="text" name="ope" placeholder="Operador" class="form-control" required>
+				      			</th>
+				        		<th>
+				        			<input value="{{ $hotel->fechaDeEntrada }}" type="date" name="fechaE"  class="form-control" required>
+				        		</th>
+				        		<th>
+				      				<input value="{{ $hotel->fechaDeSalida }}" type="date" name="fechaS"  class="form-control" required>
+				      			</th>
+				        	</tr>
+
+				        <tbody>
+                 </table>    
+		           	
+		        <table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				      			<th>
+				      				 Junior: 
+				      			</th>
+				      			<th>
+				      				Tarifa: 
+				      			</th>
+				      			<th>
+				      				Clave: 
+				      			</th>
+				      			<th>
+				      				Menores de 12: 
+				      			</th>
+				        	</tr>
+				        	<tr>
+				        		<th>
+				        			<input value="{{ $hotel->junior }}" type="number" name="junior" class="form-control" >
+				        		</th>
+				        		<th>
+				      				<input value="{{ $hotel->tarifa }}" type="number" name="tarifa"  class="form-control" >
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->clave }}" type="text" name="clave" placeholder="Clave" class="form-control" >
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->menores12 }}" type="number" name="menores12"  class="form-control" >
+				      			</th>
+				        	</tr>
+				        <tbody>
+                </table>
+
+		        <table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				      			<th>
+				      				 Habitaciones Sencillas: 
+				      			</th>
+				      			<th>
+				      				Habitaciones Dobles: 
+				      			</th>
+				      			<th>
+				      				Habitaciones Triples: 
+				      			</th>
+				      			<th>
+				      				Habitaciones Cuadruples: 
+				      			</th>
+				      			<th>
+				      				Otras Habitaciones: 
+				      			</th>
+				        	</tr>
+				        	<tr>
+				        		<th>
+				        			<input value="{{ $hotel->sgl }}" type="number" name="habS" class="form-control" >
+				        		</th>
+				        		<th>
+				      				<input value="{{ $hotel->dbl }}" type="number" name="habD"  class="form-control" >
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->tpl }}" type="number" name="habT"  class="form-control" >
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->cpl }}" type="number" name="habC"  class="form-control" >
+				      			</th>
+				      			<th>
+				      				<input value="{{ $hotel->otros }}" type="number" name="habO"  class="form-control" >
+				      			</th>
+				        	</tr>
+				        <tbody>
+                </table>
+		        <hr>
 	  			<p>
-					<h4>Datos del Costo</h4>
-				</p>
-				 <p>
-		           Costo Pax:<input value="{{ $reservacion->costoPax }}" type="text" name="costoP"  class="form-control" required>
-		         </p>
-	  			<p>
-	  			Costo Neto:<input value="{{ $reservacion->costoNeto}}" type="text" name="costoN"  class="form-control" required>
-	  			</p>
-	  			<p>
-	  			Tiempo Limite:<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim"  class="form-control" required>
-	  			</p>
+				<h4>Datos del Costo</h4>
+	  			<table class="table">
+                    	<thead>
+                    		<td></td><td></td><td></td><td></td>
+                    	</thead>
+                    	<tbody>
+				        	<tr>
+				      			<th>
+				      				 Costo Pax: 
+				      			</th>
+				      			<th>
+				      				Costo Neto: 
+				      			</th>
+				      			<th>
+				      				Tiempo Limite: 
+				      			</th>
+				        	</tr>
+				        	<tr>
+				        		<th>
+				        			<input value="{{ $reservacion->costoPax }}" type="number" name="costoP" placeholder="Costo Pax" class="form-control" required>
+				        		</th>
+				        		<th>
+				      				<input value="{{ $reservacion->costoNeto}}" type="number" name="costoN" placeholder="Costo Neto"  class="form-control" required>
+				      			</th>
+				      			<th>
+				      				<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
+				      			</th>
+				        	</tr>
+				        <tbody>
+                 </table>
 	  			<p>
 					Observaciones Pax:
 				   <textarea  name="obPax" placeholder="Observaciones Pax" class="form-control" >{{$reservacion->observacionesPax }}</textarea>

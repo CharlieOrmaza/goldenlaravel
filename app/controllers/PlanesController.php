@@ -99,7 +99,7 @@ class PlanesController extends \BaseController {
 		     $plane =  DB::table('planes')->where('papeleta', $papeleta)->first();
       		 $noPapel=$plane->papeleta;
              $reservacion = DB::table('reservations')->where('papeleta', $noPapel)->first();
-		  return View::make('planes.show')->with('plane',$plane)->with('reservacion',$reservacion);
+		     return View::make('planes.show')->with('plane',$plane)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -116,7 +116,7 @@ class PlanesController extends \BaseController {
       		 $noPapel=$plane->papeleta;
              $reservacion = DB::table('reservations')->where('papeleta', $noPapel)->first();
              Session::put('papeleta', $papeleta);
-		    return View::make('planes.edit')->with('plane',$plane)->with('reservacion',$reservacion);
+		     return View::make('planes.edit')->with('plane',$plane)->with('reservacion',$reservacion);
 	}
 
 	/**

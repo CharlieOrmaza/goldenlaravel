@@ -22,7 +22,6 @@ class HotelplanesController extends \BaseController {
 			$hotelplane = new Hotelplane;
 			$hotelplane->papeleta = $noPapeleta;
 			$hotelplane->save();
-
 			return Redirect::to('hotelAvion/edit/'.$noPapeleta);
 		}else {
 			Session::flash('message','Ha ocurrido un error!');
@@ -60,9 +59,11 @@ class HotelplanesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-
+	public function show($papeleta)
+   	{
+    	$hotelplane =  DB::table('hotelplanes')->where('papeleta', $papeleta)->first();
+		$reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
+        return View::make('hotelplanes.show')->with('hotelplane',$hotelplane)->with('reservacion',$reservacion); 
 	}
 
 	/**
@@ -89,8 +90,7 @@ class HotelplanesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-	  	    $hotelplane = Hotelplanes::find($id);
-			$hotelplane->papeleta = Input::get('numP');
+	  	    $hotelplane = Hotelplane::find($id);
 			$hotelplane->destino = Input::get('des');
 			$hotelplane->operador = Input::get('ope');
 			$hotelplane->aerolinea = Input::get('aero');
@@ -100,17 +100,23 @@ class HotelplanesController extends \BaseController {
 			$hotelplane->itinerario = Input::get('itinerario');
 			$hotelplane->FechaSalida = Input::get('fechaS');
 			$hotelplane->FechaRegreso = Input::get('fechaR');
-			$hotelplane->nombreHotel = Input::get('nameH');
+            $hotelplane->nombreHotel = Input::get('nameH');
 			$hotelplane->fechaDeEntrada = Input::get('fechaE');
-			$hotelplane->fechaDeSalida = Input::get('fechaS');
-			$hotelplane->sgl = Input::get('habS');
+			$hotelplane->fechaDeSalida = Input::get('fechadeS');
+            $hotelplane->sgl = Input::get('habS');
 			$hotelplane->dbl = Input::get('habD');
 			$hotelplane->tpl = Input::get('habT');
 			$hotelplane->cpl = Input::get('habC');
 			$hotelplane->otros = Input::get('habO');
-			 $noPapeleta=$hotelplane->papeleta;
+			$hotelplane->junior = Input::get('junior');
+			$hotelplane->tarifaHotel = Input::get('tarifa');
+			$hotelplane->claveHotel = Input::get('clave');
+			$hotelplane->menores12 = Input::get('menores12');
+			$hotelplane->plan = Input::get('plan');
+            $hotelplane->confirmoHotel = Input::get('confirmoHotel');
+            $noPapeleta=$hotelplane->papeleta;
             $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
-            $reservacion->destino = Input::get('des');
+            $reservacion->destino = Input::get('des');            
 		    $reservacion->operador = Input::get('ope');
 		    $reservacion->tipo = 'Hotel+Avion';
 			$reservacion->estado = 'Activa';
@@ -119,17 +125,18 @@ class HotelplanesController extends \BaseController {
 			$reservacion->observacionesPax = Input::get('obPax');
 			$reservacion->observacionesAgencia = Input::get('obAg');
 			$reservacion->tiempoLimite= Input::get('tmLim');
+             if ($hotelplane->save()) {
+	    	$reservacion->save();
+				Session::flash('message','Actualizado correctamente!');
+				Session::flash('class','success');
+	    	} else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+	    	} 
 
- 	   if ($plane->save()) {
-		$reservacion->save();
-			Session::flash('message','Actualizado correctamente!');
-			Session::flash('class','success');
-		} else {
-			Session::flash('message','Ha ocurrido un error!');
-			Session::flash('class','danger');
-		}
+ 	   
 
-   return Redirect::to('hotelAvion/edit/'.$noPapeleta);
+       return Redirect::to('hotelAvion/edit/'.$noPapeleta);
 	}
 
 	/**
