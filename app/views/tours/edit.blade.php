@@ -73,13 +73,13 @@
   		<div class="panel-heading">
   			<h4>Actualizar Tour</h4>
   		</div>
-                 
+
   		<div class="panel-body">
   			@if (!empty($tours))
     			<form method="post" action="/tours/update/{{ $tours->id }}">
 		            <p>
 						<h3>Papeleta</h3><hr>
-					</p>r
+					</p>
 		          	<p>
 		            	Numero de Papeleta: <b>{{Session::get('papeleta')}}</b>
 		          	</p>
@@ -107,7 +107,7 @@
 						  </div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->
 						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
-		            
+
 		          	<hr>
 	  			    <p>
 					<h4>Datos del Tour</h4>
@@ -137,21 +137,21 @@
                     	<tbody>
 				        	<tr>
 				      			<th>
-				      				 Costo Pax: 
+				      				 Costo Pax:
 				      			</th>
 				      			<th>
-				      				Costo Neto: 
+				      				Costo Neto:
 				      			</th>
 				      			<th>
-				      				Tiempo Limite: 
+				      				Tiempo Limite:
 				      			</th>
 				        	</tr>
 				        	<tr>
 				        		<th>
-				        			<input value="{{ $reservacion->costoPax }}" type="number" name="costoP" placeholder="Costo Pax" class="form-control" required>
+				        			<input value="{{ $reservacion->costoPax }}" type="number" name="costoP" step="any" placeholder="Costo Pax" class="form-control" required>
 				        		</th>
 				        		<th>
-				      				<input value="{{ $reservacion->costoNeto}}" type="number" name="costoN" placeholder="Costo Neto"  class="form-control" required>
+				      				<input value="{{ $reservacion->costoNeto}}" type="number" name="costoN" step="any" placeholder="Costo Neto"  class="form-control" required>
 				      			</th>
 				      			<th>
 				      				<input value="{{ $reservacion->tiempoLimite }}" type="date" name="tmLim" placeholder="Tiempo Limite" class="form-control" required>
