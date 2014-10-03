@@ -10,7 +10,7 @@ class AutobusesController extends \BaseController {
 		 */
 		public function index()
 		{
-		 
+
 			$papeleta= Papeleta::find(1);
 			$noPapeleta= $papeleta->papeleta;
 			$papeleta->papeleta = $noPapeleta+1;
@@ -28,7 +28,7 @@ class AutobusesController extends \BaseController {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
 				return Redirect::to('consultas');
-			} 
+			}
 		}
 
 		/**
@@ -79,7 +79,7 @@ class AutobusesController extends \BaseController {
 			 $autobuses =  DB::table('autobuses')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
 		     Session::put('papeleta', $papeleta);
-		     return View::make('autobuses.edit')->with('autobuses',$autobuses)->with('reservacion',$reservacion); 
+		     return View::make('autobuses.edit')->with('autobuses',$autobuses)->with('reservacion',$reservacion);
 		}
 
 		/**

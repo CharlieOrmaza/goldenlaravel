@@ -73,7 +73,7 @@
   		<div class="panel-heading">
   			<h4>Actualizar Traslado</h4>
   		</div>
-                 
+
   		<div class="panel-body">
   			@if (!empty($translation))
     			<form method="post" action="/traslados/update/{{ $translation->id }}">
@@ -107,7 +107,6 @@
 						  </div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->
 						<div id='tablaClientes' align="center"><img src="/img/preloader-01.gif"></div>
-		            
 		          	<hr>
 	  			    <p>
 					<h4>Datos del Traslado</h4>
@@ -135,13 +134,13 @@
                     	<tbody>
 				        	<tr>
 				      			<th>
-				      				 Costo Pax: 
+				      				 Costo Pax:
 				      			</th>
 				      			<th>
-				      				Costo Neto: 
+				      				Costo Neto:
 				      			</th>
 				      			<th>
-				      				Tiempo Limite: 
+				      				Tiempo Limite:
 				      			</th>
 				        	</tr>
 				        	<tr>

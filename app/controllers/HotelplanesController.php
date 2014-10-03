@@ -63,7 +63,7 @@ class HotelplanesController extends \BaseController {
    	{
     	$hotelplane =  DB::table('hotelplanes')->where('papeleta', $papeleta)->first();
 		$reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
-        return View::make('hotelplanes.show')->with('hotelplane',$hotelplane)->with('reservacion',$reservacion); 
+        return View::make('hotelplanes.show')->with('hotelplane',$hotelplane)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -116,7 +116,7 @@ class HotelplanesController extends \BaseController {
             $hotelplane->confirmoHotel = Input::get('confirmoHotel');
             $noPapeleta=$hotelplane->papeleta;
             $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
-            $reservacion->destino = Input::get('des');            
+            $reservacion->destino = Input::get('des');
 		    $reservacion->operador = Input::get('ope');
 		    $reservacion->tipo = 'Hotel+Avion';
 			$reservacion->estado = 'Activa';
@@ -132,9 +132,9 @@ class HotelplanesController extends \BaseController {
 	    	} else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
-	    	} 
+	    	}
 
- 	   
+
 
        return Redirect::to('hotelAvion/edit/'.$noPapeleta);
 	}

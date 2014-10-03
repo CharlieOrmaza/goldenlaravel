@@ -37,8 +37,20 @@
 								<?php $miTipo='hoteles'; ?>
 							@elseif($consulta->tipo =='Avion')
 								<?php $miTipo ='aviones'; ?>
-							@elseif($consulta->tipo =='Hotel + Avion')
+							@elseif($consulta->tipo =='Hotel+Avion')
 								<?php $miTipo ='hotelAvion'; ?>
+							@elseif($consulta->tipo =='Circuito')
+								<?php $miTipo ='circuitos'; ?>
+							@elseif($consulta->tipo =='Crucero')
+								<?php $miTipo ='cruceros'; ?>
+							@elseif($consulta->tipo =='RentaAuto')
+								<?php $miTipo ='rentaautos'; ?>
+							@elseif($consulta->tipo =='RentadeUnidades')
+								<?php $miTipo ='rentadeUnidades'; ?>
+							@elseif($consulta->tipo =='Tour')
+								<?php $miTipo ='tours'; ?>
+							@elseif($consulta->tipo =='Traslados')
+								<?php $miTipo ='traslados'; ?>
 							@endif
 							<td>{{ $consulta->id }}</td>
 							<td><a href="/{{$miTipo}}/show/{{ $consulta->papeleta }}"><span class="label label-info">{{ $consulta->papeleta }}</span></a></td>
@@ -48,7 +60,7 @@
 							<td>{{ $consulta->tipo }}</td>
 							<td>{{ $consulta->estado }}</td>
 							<td>
-							@if($consulta->estado =='Activa')
+							@if($consulta->estado !='Cancelada' && $consulta->estado !='Completo')
 								<a href="/{{$miTipo}}/edit/{{ $consulta->papeleta }}"><span class="label label-success">Editar</span></a>
 								<a href="{{ url('/reservation/destroy',$consulta->papeleta) }}"><span class="label label-danger">Cancelar</span></a>
 							@endif

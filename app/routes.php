@@ -36,35 +36,35 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('circuitos/show/{id}','CircuitosController@show');
 	Route::get('circuitos/edit/{id}','CircuitosController@edit');
 	Route::get('circuitos/destroy/{id}','CircuitosController@destroy');
-	Route::resource('circuitos', 'CircuitosController'); 	
+	Route::resource('circuitos', 'CircuitosController');
 
     Route::post('cruceros/update/{id}','CrucerosController@update');
 	Route::post('cruceros/store','CrucerosController@store');
 	Route::get('cruceros/show/{id}','CrucerosController@show');
 	Route::get('cruceros/edit/{id}','CrucerosController@edit');
 	Route::get('cruceros/destroy/{id}','CrucerosController@destroy');
-	Route::resource('cruceros', 'CrucerosController');     
+	Route::resource('cruceros', 'CrucerosController');
 
     Route::post('rentaAutos/update/{id}','RentaAutosController@update');
 	Route::post('rentaAutos/store','RentaAutosController@store');
 	Route::get('rentaAutos/show/{id}','RentaAutosController@show');
 	Route::get('rentaAutos/edit/{id}','RentaAutosController@edit');
 	Route::get('rentaAutos/destroy/{id}','RentaAutosController@destroy');
-	Route::resource('rentaAutos', 'RentaAutosController'); 
+	Route::resource('rentaAutos', 'RentaAutosController');
 
     Route::post('rentadeUnidades/update/{id}','RentadeunidadsController@update');
 	Route::post('rentadeUnidades/store','RentadeunidadsController@store');
 	Route::get('rentadeUnidades/show/{id}','RentadeunidadsController@show');
 	Route::get('rentadeUnidades/edit/{id}','RentadeunidadsController@edit');
 	Route::get('rentadeUnidades/destroy/{id}','RentadeunidadsController@destroy');
-	Route::resource('rentadeUnidades', 'RentadeunidadsController'); 	
+	Route::resource('rentadeUnidades', 'RentadeunidadsController');
 
     Route::post('tours/update/{id}','ToursController@update');
 	Route::post('tours/store','ToursController@store');
 	Route::get('tours/show/{id}','ToursController@show');
 	Route::get('tours/edit/{id}','ToursController@edit');
 	Route::get('tours/destroy/{id}','ToursController@destroy');
-	Route::resource('tours', 'ToursController'); 
+	Route::resource('tours', 'ToursController');
 
 	Route::post('hoteles/update/{id}','HotelsController@update');
 	Route::post('hoteles/store','HotelsController@store');

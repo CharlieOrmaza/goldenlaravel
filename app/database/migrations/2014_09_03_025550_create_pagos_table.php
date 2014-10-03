@@ -21,6 +21,7 @@ class CreatePagosTable extends Migration {
 			$table->string('formaDePago');
 			$table->string('tarjeta');
 			$table->string('cupon');
+			$table->string('comision');
 			$table->string('usuario');
 			$table->timestamps();
 		});

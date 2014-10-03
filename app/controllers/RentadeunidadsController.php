@@ -27,8 +27,8 @@ class RentadeunidadsController extends \BaseController {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
 				return Redirect::to('consultas');
-			}	
-	
+			}
+
 	}
 
 	/**
@@ -63,7 +63,7 @@ class RentadeunidadsController extends \BaseController {
 	{
 		     $rentadeunidads =   DB::table('rentadeunidads')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
-		     return View::make('rentadeunidads.show')->with('rentadeunidads',$rentadeunidads)->with('reservacion',$reservacion); 
+		     return View::make('rentadeunidads.show')->with('rentadeunidads',$rentadeunidads)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -78,7 +78,7 @@ class RentadeunidadsController extends \BaseController {
 			 $rentadeunidads =  DB::table('rentadeunidads')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
 		     Session::put('papeleta', $papeleta);
-		     return View::make('rentadeunidads.edit')->with('rentadeunidads',$rentadeunidads)->with('reservacion',$reservacion); 
+		     return View::make('rentadeunidads.edit')->with('rentadeunidads',$rentadeunidads)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -89,7 +89,7 @@ class RentadeunidadsController extends \BaseController {
 	 * @return Response
 	 */
 	public function update($id)
-	{			
+	{
 		    $rentadeunidads = Rentadeunidad::find($id);
 			$rentadeunidads->empresaTuristica = Input::get('empresaTuristica');
 			$rentadeunidads->tipoUnidad = Input::get('tipoUnidad');
@@ -119,7 +119,7 @@ class RentadeunidadsController extends \BaseController {
 	    	}
 
              return Redirect::to('rentadeUnidades/edit/'.$noPapeleta);
-		
+
 	}
 
 	/**

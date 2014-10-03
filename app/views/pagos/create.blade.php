@@ -84,7 +84,7 @@
 		  				Tiempo Limite: <strong>{{ $res->tiempoLimite }}(aaaa-mm-dd)</strong>
 		  			</p>
 					<hr>
-		  			@if($res->estado=='Activa')
+		  			@if($res->estado != 'Cancelada' and $res->estado != 'Completo')
 	  				<div class="panel panel-info">
 				  		<div class="panel-heading">
 				  			<h4>Nuevo Pago</h4>
@@ -106,6 +106,7 @@
 
 								<p class="box1" style="display: none;">
 									Tarjeta:<input type="text" name="tarjeta" placeholder="Ingresa tipo de Tarjeta" class="form-control" >
+									Comisión:<input type="number" step='any' name="comision" placeholder="Ingresa la comision si genera" class="form-control" >
 								</p>
 
 								<p class="box2" style="display: none;">

@@ -10,7 +10,7 @@ class CircuitosController extends \BaseController {
 	 */
 	public function index()
 	{
-		 
+
 			$papeleta= Papeleta::find(1);
 			$noPapeleta= $papeleta->papeleta;
 			$papeleta->papeleta = $noPapeleta+1;
@@ -28,8 +28,8 @@ class CircuitosController extends \BaseController {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
 				return Redirect::to('consultas');
-			} 
-		
+			}
+
 	}
 
 	/**
@@ -65,7 +65,7 @@ class CircuitosController extends \BaseController {
 	{
 		     $circuitos =   DB::table('circuitos')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
-		     return View::make('circuitos.show')->with('circuitos',$circuitos)->with('reservacion',$reservacion); 
+		     return View::make('circuitos.show')->with('circuitos',$circuitos)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -80,8 +80,8 @@ class CircuitosController extends \BaseController {
 			 $circuitos =  DB::table('circuitos')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
 		     Session::put('papeleta', $papeleta);
-		     return View::make('circuitos.edit')->with('circuitos',$circuitos)->with('reservacion',$reservacion); 
-		    
+		     return View::make('circuitos.edit')->with('circuitos',$circuitos)->with('reservacion',$reservacion);
+
 	}
 
 	/**

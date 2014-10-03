@@ -50,6 +50,35 @@ class PagosController extends \BaseController {
 		if ($pagos->save()) {
 			Session::flash('message','Pago Guardado correctamente!');
 			Session::flash('class','success');
+			$reservacion= Reservation::where('papeleta', '=', Input::get('papeleta'))->first();
+			$totalAgencia= $reservacion->costoNeto;
+			$totalPax= $reservacion->costoPax;
+			$idReservacion= $reservacion->id;
+			$papeleta = Input::get('papeleta');
+			$sumas= DB::select('SELECT pagoDe,sum(cantidad) as suma FROM pagos where papeleta='.$papeleta.' group by pagoDe');
+			$sumaAgencia=0;
+			$sumaPax=0;
+			foreach($sumas as $valor){
+				if($valor->pagoDe == 'Agencia'){
+					$sumaAgencia=$valor->suma;
+				}
+				if($valor->pagoDe == 'Pax'){
+					$sumaPax=$valor->suma;
+				}
+			}
+			$restoAgencia = $totalAgencia-$sumaAgencia;
+			$restoPax = $totalPax-$sumaPax;
+
+			$reservacion = Reservation::find($idReservacion);
+			if($restoAgencia <= 0 && $restoPax <= 0){
+				$reservacion->estado = 'Completo';
+			}elseif($restoAgencia <= 0){
+				$reservacion->estado = 'Falta pax';
+			}elseif($restoPax <= 0){
+				$reservacion->estado = 'Falta Agencia';
+			}
+			$reservacion->save();
+			return Redirect::to('pagos/nuevo/'.Input::get('papeleta'));
 		} else {
 			Session::flash('message','Ha ocurrido un error!');
 			Session::flash('class','danger');

@@ -40,7 +40,7 @@ class HotelsController extends BaseController {
 	 */
 	public function create()
 	{
-		
+
 		return Redirect::to('hoteles');
 	}
 

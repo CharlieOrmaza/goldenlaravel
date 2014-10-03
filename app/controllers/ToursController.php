@@ -63,8 +63,8 @@ class ToursController extends \BaseController {
 	{
 		     $tours =   DB::table('tours')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
-		     return View::make('tours.show')->with('tours',$tours)->with('reservacion',$reservacion); 
-		
+		     return View::make('tours.show')->with('tours',$tours)->with('reservacion',$reservacion);
+
 	}
 
 	/**
@@ -79,7 +79,7 @@ class ToursController extends \BaseController {
 			 $tours =  DB::table('tours')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
 		     Session::put('papeleta', $papeleta);
-		     return View::make('tours.edit')->with('tours',$tours)->with('reservacion',$reservacion); 
+		     return View::make('tours.edit')->with('tours',$tours)->with('reservacion',$reservacion);
 	}
 
 	/**

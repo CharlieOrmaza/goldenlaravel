@@ -5,11 +5,11 @@
    <li><a href="/hoteles">Hotel</a></li>
    <lii><a href="/aviones">Avion</a></li>
    <li ><a href="/hotelAvion">Hotel + Avion</a></li>
-   <li><a href="#">Tours</a></li>
-   <li><a href="#">Renta de Auto</a></li>
+   <li><a href="/circuitos">Circuito</a></li>
+   <li><a href="/tours">Tours</a></li>
+   <li><a href="/cruceros">Crucero</a></li>
    <li><a href="/traslados">Traslados</a></li>
-   <li><a href="#">Grupos</a></li>
-   <li><a href="#">Renta de Transporte</a></li>
+   <li><a href="rentadeUnidades">Renta de Transporte</a></li>
   </ul>
  </li>
  <li><a href="/consultas">Consultas</a>

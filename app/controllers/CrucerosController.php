@@ -27,7 +27,7 @@ class CrucerosController extends \BaseController {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
 				return Redirect::to('consultas');
-			}		
+			}
 	}
 
 	/**
@@ -63,7 +63,7 @@ class CrucerosController extends \BaseController {
 	{
 		     $cruceros =   DB::table('cruceros')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
-		     return View::make('cruceros.show')->with('cruceros',$cruceros)->with('reservacion',$reservacion); 
+		     return View::make('cruceros.show')->with('cruceros',$cruceros)->with('reservacion',$reservacion);
 	}
 
 	/**
@@ -78,7 +78,7 @@ class CrucerosController extends \BaseController {
 			 $cruceros =  DB::table('cruceros')->where('papeleta', $papeleta)->first();
              $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
 		     Session::put('papeleta', $papeleta);
-		     return View::make('cruceros.edit')->with('cruceros',$cruceros)->with('reservacion',$reservacion); 
+		     return View::make('cruceros.edit')->with('cruceros',$cruceros)->with('reservacion',$reservacion);
 	}
 
 	/**

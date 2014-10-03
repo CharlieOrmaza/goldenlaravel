@@ -22,13 +22,13 @@ class RentaAutosController extends \BaseController {
 				$rentaAutos = new Rentaauto;
 				$rentaAutos->papeleta = $noPapeleta;
 				$rentaAutos->save();
-				
+
+				return Redirect::to('rentaautos/edit/'.$noPapeleta);
 			}else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
 				return Redirect::to('consultas');
 			}
-			
 	}
 
 	/**
