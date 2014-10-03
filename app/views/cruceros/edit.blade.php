@@ -79,7 +79,7 @@
     			<form method="post" action="/cruceros/update/{{ $cruceros->id }}">
 		            <p>
 						<h3>Papeleta</h3><hr>
-					</p>r
+					</p>
 		          	<p>
 		            	Numero de Papeleta: <b>{{Session::get('papeleta')}}</b>
 		          	</p>

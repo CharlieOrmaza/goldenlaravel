@@ -9,7 +9,7 @@
    <li><a href="/tours">Tours</a></li>
    <li><a href="/cruceros">Crucero</a></li>
    <li><a href="/traslados">Traslados</a></li>
-   <li><a href="rentadeUnidades">Renta de Transporte</a></li>
+   <li><a href="/rentadeUnidades">Renta de Transporte</a></li>
   </ul>
  </li>
  <li><a href="/consultas">Consultas</a>
