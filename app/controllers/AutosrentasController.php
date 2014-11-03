@@ -1,36 +1,28 @@
 <?php
 
-class RentaAutosController extends \BaseController {
+class AutosrentasController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /rentaautos
+	 * GET /autosrentas
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-			$papeleta= Papeleta::find(1);
+		    $papeleta= Papeleta::find(1);
 			$noPapeleta= $papeleta->papeleta;
 			$papeleta->papeleta = $noPapeleta+1;
 			$papeleta->save();
 			$reservacion = new Reservation;
 			$reservacion->papeleta= $noPapeleta;
-			$reservacion->tipo = 'RentaAuto';
+			$reservacion->tipo = 'Autobus';
 			$reservacion->estado = 'Activa';
 			if ($reservacion->save()) {
-<<<<<<< HEAD:app/controllers/RentaAutosController.php
-				$rentaAutos = new Rentaauto;
-				$rentaAutos->papeleta = $noPapeleta;
-				$rentaAutos->save();
-
-				return Redirect::to('rentaautos/edit/'.$noPapeleta);
-=======
 				$autosrentas = new Autosrenta;
 				$autosrentas->papeleta = $noPapeleta;
 				$autosrentas->save();
 				return Redirect::to('autobuses/edit/'.$noPapeleta);
->>>>>>> origin/master:app/controllers/AutosrentasController.php
 			}else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
@@ -40,7 +32,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /rentaautos/create
+	 * GET /autosrentas/create
 	 *
 	 * @return Response
 	 */
@@ -51,7 +43,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /rentaautos
+	 * POST /autosrentas
 	 *
 	 * @return Response
 	 */
@@ -62,7 +54,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /rentaautos/{id}
+	 * GET /autosrentas/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -74,7 +66,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /rentaautos/{id}/edit
+	 * GET /autosrentas/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -86,7 +78,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /rentaautos/{id}
+	 * PUT /autosrentas/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -98,7 +90,7 @@ class RentaAutosController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /rentaautos/{id}
+	 * DELETE /autosrentas/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

@@ -23,23 +23,21 @@ w\:* {behavior:url(#default#VML);}
   <o:Author>Kokiritl II</o:Author>
   <o:LastAuthor>Kokiritl II</o:LastAuthor>
   <o:Revision>2</o:Revision>
-  <o:TotalTime>0</o:TotalTime>
-  <o:Created>2014-11-03T21:10:00Z</o:Created>
-  <o:LastSaved>2014-11-03T21:10:00Z</o:LastSaved>
+  <o:TotalTime>48</o:TotalTime>
+  <o:Created>2014-11-03T20:24:00Z</o:Created>
+  <o:LastSaved>2014-11-03T20:24:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
   <o:Words>42</o:Words>
-  <o:Characters>237</o:Characters>
+  <o:Characters>235</o:Characters>
   <o:Lines>1</o:Lines>
   <o:Paragraphs>1</o:Paragraphs>
-  <o:CharactersWithSpaces>278</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>276</o:CharactersWithSpaces>
   <o:Version>14.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-<link rel=dataStoreItem href="reciboOrden_archivos/item0001.xml"
-target="reciboOrden_archivos/props002.xml">
 <link rel=themeData href="reciboOrden_archivos/themedata.thmx">
 <link rel=colorSchemeMapping href="reciboOrden_archivos/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
@@ -397,6 +395,9 @@ target="reciboOrden_archivos/props002.xml">
 span.SpellE
 	{mso-style-name:"";
 	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -465,19 +466,18 @@ div.WordSection1
 margin-bottom:7.5pt;margin-left:0cm;text-align:center;line-height:normal;
 mso-outline-level:2;background:white'><span style='font-size:22.5pt;font-family:
 "inherit","serif";mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
-Helvetica;color:#333333;mso-fareast-language:ES-MX'>Recibo<span
-style='mso-tab-count:1'> </span></span><span lang=EN-US style='font-size:22.5pt;
-font-family:"inherit","serif";mso-fareast-font-family:"Times New Roman";
-mso-bidi-font-family:Helvetica;color:#333333;mso-ansi-language:EN-US;
-mso-fareast-language:ES-MX'><span style='mso-tab-count:1'>      </span><span
-style='mso-tab-count:2'>            </span><span style='mso-tab-count:2'>            </span><span
-style='mso-tab-count:1'>      </span><span style='mso-tab-count:1'>      </span><span
-style='mso-tab-count:1'>      </span></span><span style='font-size:18.0pt;
-font-family:"inherit","serif";mso-fareast-font-family:"Times New Roman";
-mso-bidi-font-family:Helvetica;color:#333333;mso-fareast-language:ES-MX'>Orden</span><span
-lang=EN-US style='font-size:18.0pt;font-family:"inherit","serif";mso-fareast-font-family:
+Helvetica;color:#333333;mso-fareast-language:ES-MX'>Recibo</span><span
+lang=EN-US style='font-size:22.5pt;font-family:"inherit","serif";mso-fareast-font-family:
 "Times New Roman";mso-bidi-font-family:Helvetica;color:#333333;mso-ansi-language:
-EN-US;mso-fareast-language:ES-MX'> # %<span class=SpellE>orden</span>%<o:p></o:p></span></p>
+EN-US;mso-fareast-language:ES-MX'><span style='mso-tab-count:1'> </span><span
+style='mso-tab-count:1'>      </span><span style='mso-tab-count:3'>                  </span><span
+style='mso-tab-count:1'>      </span><span style='mso-tab-count:1'>      </span></span><span
+style='font-size:18.0pt;font-family:"inherit","serif";mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Helvetica;color:#333333;mso-fareast-language:
+ES-MX'>Orden</span><span lang=EN-US style='font-size:18.0pt;font-family:"inherit","serif";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:Helvetica;
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:ES-MX'> # %<span
+class=SpellE>orden</span>%<o:p></o:p></span></p>
 
 <div class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0cm;
 margin-bottom:15.0pt;margin-left:0cm;text-align:center;line-height:15.0pt;
@@ -490,11 +490,15 @@ ES-MX'>
 </span></div>
 
 <p class=MsoNormal style='margin-bottom:15.0pt;line-height:normal;background:
-white'><b><span style='font-size:10.5pt;font-family:"Helvetica","sans-serif";
-mso-fareast-font-family:"Times New Roman";color:#333333;mso-fareast-language:
-ES-MX'>Cobrado a:</span></b><span style='font-size:10.5pt;font-family:"Helvetica","sans-serif";
-mso-fareast-font-family:"Times New Roman";color:#333333;mso-fareast-language:
-ES-MX'><br>
+white'><span class=SpellE><b><span lang=EN-US style='font-size:10.5pt;
+font-family:"Helvetica","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:ES-MX'>Cobrado</span></b></span><b><span
+lang=EN-US style='font-size:10.5pt;font-family:"Helvetica","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:ES-MX'> a<span class=GramE>:</span></span></b><span
+lang=EN-US style='font-size:10.5pt;font-family:"Helvetica","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:ES-MX'><br>
 %<span class=SpellE>nombreCliente</span>%<br style='mso-special-character:line-break'>
 <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
 <![endif]><o:p></o:p></span></p>
@@ -528,27 +532,24 @@ style='font-size:12.0pt;font-family:"inherit","serif";mso-fareast-font-family:
 "Times New Roman";mso-bidi-font-family:Helvetica;color:#333333;mso-fareast-language:
 ES-MX'><o:p></o:p></span></p>
 
-<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=669
- style='width:501.6pt;margin-left:.75pt;border-collapse:collapse;mso-yfti-tbllook:
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=576
+ style='width:432.35pt;margin-left:.75pt;border-collapse:collapse;mso-yfti-tbllook:
  1184'>
  <thead>
-  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:30.45pt'>
-   <td width=150 valign=top style='width:112.3pt;padding:.75pt .75pt .75pt .75pt;
-   height:30.45pt'>
+  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+   <td width=132 valign=top style='width:99.25pt;padding:.75pt .75pt .75pt .75pt'>
    <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
    line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
    mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>Forma
    de Pago<o:p></o:p></span></b></p>
    </td>
-   <td width=129 valign=top style='width:96.8pt;padding:.75pt .75pt .75pt .75pt;
-   height:30.45pt'>
+   <td width=113 valign=top style='width:3.0cm;padding:.75pt .75pt .75pt .75pt'>
    <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
    line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
    mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>Fecha
    de Pago<o:p></o:p></span></b></p>
    </td>
-   <td width=132 valign=top style='width:99.2pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-   height:30.45pt'>
+   <td width=104 valign=top style='width:77.95pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
    <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
    line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
    mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>Saldo <span
@@ -556,17 +557,15 @@ ES-MX'><o:p></o:p></span></p>
    "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
    mso-fareast-language:ES-MX'><o:p></o:p></span></p>
    </td>
-   <td width=117 valign=top style='width:87.95pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-   height:30.45pt'>
+   <td width=104 valign=top style='width:77.95pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
    <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
    line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
    mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>Abono</span></b><span
    style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
    "Times New Roman";mso-fareast-language:ES-MX'><o:p></o:p></span></p>
    </td>
-   <td width=140 valign=top style='width:105.35pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-   height:30.45pt'>
-   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
+   <td width=123 valign=top style='width:92.15pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+   <p class=MsoNormal align=right style='margin-bottom:15.0pt;text-align:right;
    line-height:normal'><span class=SpellE><b><span style='font-size:12.0pt;
    font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
    mso-fareast-language:ES-MX'>Totals</span></b></span><span style='font-size:
@@ -575,73 +574,68 @@ ES-MX'><o:p></o:p></span></p>
    </td>
   </tr>
  </thead>
- <tr style='mso-yfti-irow:1;height:45.25pt'>
-  <td width=150 valign=top style='width:112.3pt;border:none;border-top:solid #DDDDDD 1.0pt;
-  mso-border-top-alt:solid #DDDDDD .75pt;padding:.75pt .75pt .75pt .75pt;
-  height:45.25pt'>
+ <tr style='mso-yfti-irow:1'>
+  <td width=132 valign=top style='width:99.25pt;border:none;border-top:solid #DDDDDD 1.0pt;
+  mso-border-top-alt:solid #DDDDDD .75pt;padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%<span
   class=SpellE>formaPago</span>%<o:p></o:p></span></p>
   </td>
-  <td width=129 valign=top style='width:96.8pt;border:none;border-top:solid #DDDDDD 1.0pt;
-  mso-border-top-alt:solid #DDDDDD .75pt;padding:.75pt .75pt .75pt .75pt;
-  height:45.25pt'>
+  <td width=113 valign=top style='width:3.0cm;border:none;border-top:solid #DDDDDD 1.0pt;
+  mso-border-top-alt:solid #DDDDDD .75pt;padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%<span
   class=SpellE>fechaPago</span>%<o:p></o:p></span></p>
   </td>
-  <td width=132 valign=top style='width:99.2pt;border:none;border-top:solid #DDDDDD 1.0pt;
-  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-  height:45.25pt'>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-top:solid #DDDDDD 1.0pt;
+  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%<span
   class=SpellE>SaldoAnterior</span>%<o:p></o:p></span></p>
   </td>
-  <td width=117 valign=top style='width:87.95pt;border:none;border-top:solid #DDDDDD 1.0pt;
-  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-  height:45.25pt'>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-top:solid #DDDDDD 1.0pt;
+  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%abono%<o:p></o:p></span></p>
   </td>
-  <td width=140 valign=top style='width:105.35pt;border:none;border-top:solid #DDDDDD 1.0pt;
-  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt;
-  height:45.25pt'>
-  <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
+  <td width=123 valign=top style='width:92.15pt;border:none;border-top:solid #DDDDDD 1.0pt;
+  mso-border-top-alt:solid #DDDDDD .75pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:15.0pt;text-align:right;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%<span
   class=SpellE>totalAbono</span>%<o:p></o:p></span></p>
   </td>
  </tr>
- <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:30.45pt'>
-  <td width=150 valign=top style='width:112.3pt;border:none;border-top:solid windowtext 1.5pt;
-  padding:.75pt .75pt .75pt .75pt;height:30.45pt'>
-  <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
-  line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
-  mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'><o:p>&nbsp;</o:p></span></p>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=132 valign=top style='width:99.25pt;border:none;border-top:solid windowtext 1.5pt;
+  padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:15.0pt;line-height:normal'><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman";mso-fareast-language:ES-MX'><o:p>&nbsp;</o:p></span></p>
   </td>
-  <td width=129 valign=top style='width:96.8pt;border:none;border-top:solid windowtext 1.5pt;
-  padding:.75pt .75pt .75pt .75pt;height:30.45pt'>
-  <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
-  line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
-  mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'><o:p>&nbsp;</o:p></span></p>
+  <td width=113 valign=top style='width:3.0cm;border:none;border-top:solid windowtext 1.5pt;
+  padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:15.0pt;line-height:normal'><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman";mso-fareast-language:ES-MX'><o:p>&nbsp;</o:p></span></p>
   </td>
-  <td width=132 valign=top style='width:99.2pt;border:none;border-top:solid windowtext 1.5pt;
-  padding:3.75pt 3.75pt 3.75pt 3.75pt;height:30.45pt'></td>
-  <td width=117 valign=top style='width:87.95pt;border:none;border-top:solid windowtext 1.5pt;
-  padding:3.75pt 3.75pt 3.75pt 3.75pt;height:30.45pt'>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-top:solid windowtext 1.5pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+  <td width=104 valign=top style='width:77.95pt;border:none;border-top:solid windowtext 1.5pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
   <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
   line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>Total</span></b><span
   style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
   "Times New Roman";mso-fareast-language:ES-MX'><o:p></o:p></span></p>
   </td>
-  <td width=140 valign=top style='width:105.35pt;border:none;border-top:solid windowtext 1.5pt;
-  padding:3.75pt 3.75pt 3.75pt 3.75pt;height:30.45pt'>
-  <p class=MsoNormal align=center style='margin-bottom:15.0pt;text-align:center;
+  <td width=123 valign=top style='width:92.15pt;border:none;border-top:solid windowtext 1.5pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:15.0pt;text-align:right;
   line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
   mso-fareast-font-family:"Times New Roman";mso-fareast-language:ES-MX'>%total%<o:p></o:p></span></p>
   </td>
