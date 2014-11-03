@@ -3,7 +3,7 @@
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class RentaAutosTableSeeder extends Seeder {
+class AutosrentaTableSeeder extends Seeder {
 
 	public function run()
 	{
@@ -11,7 +11,7 @@ class RentaAutosTableSeeder extends Seeder {
 
 		foreach(range(1, 10) as $index)
 		{
-			RentaAuto::create([
+			Autosrentum::create([
 
 			]);
 		}

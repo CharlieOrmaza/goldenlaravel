@@ -1,1 +1,0 @@
-C:\xampp\htdocs\goldenlaravel\app/views/rentaAutos/create.blade.php
