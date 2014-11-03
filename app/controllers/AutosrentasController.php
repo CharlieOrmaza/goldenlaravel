@@ -19,7 +19,7 @@ class AutosrentasController extends \BaseController {
 			$reservacion->tipo = 'Autobus';
 			$reservacion->estado = 'Activa';
 			if ($reservacion->save()) {
-				$autosrentas = new Autorenta;
+				$autosrentas = new Autosrenta;
 				$autosrentas->papeleta = $noPapeleta;
 				$autosrentas->save();
 				return Redirect::to('autobuses/edit/'.$noPapeleta);

@@ -45,12 +45,12 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('cruceros/destroy/{id}','CrucerosController@destroy');
 	Route::resource('cruceros', 'CrucerosController');
 
-    Route::post('rentaAutos/update/{id}','RentaAutosController@update');
-	Route::post('rentaAutos/store','RentaAutosController@store');
-	Route::get('rentaAutos/show/{id}','RentaAutosController@show');
-	Route::get('rentaAutos/edit/{id}','RentaAutosController@edit');
-	Route::get('rentaAutos/destroy/{id}','RentaAutosController@destroy');
-	Route::resource('rentaAutos', 'RentaAutosController');
+    Route::post('rentaAutos/update/{id}','AutosRentasController@update');
+	Route::post('rentaAutos/store','AutosRentasController@store');
+	Route::get('rentaAutos/show/{id}','AutosRentasController@show');
+	Route::get('rentaAutos/edit/{id}','AutosRentasController@edit');
+	Route::get('rentaAutos/destroy/{id}','AutosRentasController@destroy');
+	Route::resource('rentaAutos', 'AutosRentasController');
 
     Route::post('rentadeUnidades/update/{id}','RentadeunidadsController@update');
 	Route::post('rentadeUnidades/store','RentadeunidadsController@store');
