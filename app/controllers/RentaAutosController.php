@@ -19,11 +19,18 @@ class RentaAutosController extends \BaseController {
 			$reservacion->tipo = 'RentaAuto';
 			$reservacion->estado = 'Activa';
 			if ($reservacion->save()) {
+<<<<<<< HEAD:app/controllers/RentaAutosController.php
 				$rentaAutos = new Rentaauto;
 				$rentaAutos->papeleta = $noPapeleta;
 				$rentaAutos->save();
 
 				return Redirect::to('rentaautos/edit/'.$noPapeleta);
+=======
+				$autosrentas = new Autosrenta;
+				$autosrentas->papeleta = $noPapeleta;
+				$autosrentas->save();
+				return Redirect::to('autobuses/edit/'.$noPapeleta);
+>>>>>>> origin/master:app/controllers/AutosrentasController.php
 			}else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
