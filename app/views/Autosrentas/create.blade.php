@@ -1,1 +1,0 @@
-C:\xampp\htdocs\goldenlaravel\app/views/Autosrentas/create.blade.php

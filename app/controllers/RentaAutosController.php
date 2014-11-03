@@ -1,28 +1,29 @@
 <?php
 
-class AutosrentasController extends \BaseController {
+class RentaAutosController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /autosrentas
+	 * GET /rentaautos
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		    $papeleta= Papeleta::find(1);
+			$papeleta= Papeleta::find(1);
 			$noPapeleta= $papeleta->papeleta;
 			$papeleta->papeleta = $noPapeleta+1;
 			$papeleta->save();
 			$reservacion = new Reservation;
 			$reservacion->papeleta= $noPapeleta;
-			$reservacion->tipo = 'Autobus';
+			$reservacion->tipo = 'RentaAuto';
 			$reservacion->estado = 'Activa';
 			if ($reservacion->save()) {
-				$autosrentas = new Autorenta;
-				$autosrentas->papeleta = $noPapeleta;
-				$autosrentas->save();
-				return Redirect::to('autobuses/edit/'.$noPapeleta);
+				$rentaAutos = new Rentaauto;
+				$rentaAutos->papeleta = $noPapeleta;
+				$rentaAutos->save();
+
+				return Redirect::to('rentaautos/edit/'.$noPapeleta);
 			}else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
@@ -32,7 +33,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /autosrentas/create
+	 * GET /rentaautos/create
 	 *
 	 * @return Response
 	 */
@@ -43,7 +44,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /autosrentas
+	 * POST /rentaautos
 	 *
 	 * @return Response
 	 */
@@ -54,7 +55,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /autosrentas/{id}
+	 * GET /rentaautos/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -66,7 +67,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /autosrentas/{id}/edit
+	 * GET /rentaautos/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -78,7 +79,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /autosrentas/{id}
+	 * PUT /rentaautos/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -90,7 +91,7 @@ class AutosrentasController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /autosrentas/{id}
+	 * DELETE /rentaautos/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
