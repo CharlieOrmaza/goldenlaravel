@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-@include ('includes.menu')
+
 
 	<h1>Consultas</h1>
 
@@ -69,9 +69,26 @@
 						</tr>
 					@endforeach
 			@else
-	          	<tr><th colspan="5">
-	            	No existe información en esta consulta.
-	          	</th></tr>
+	          	<tr>
+		          	<th colspan="3">
+		            	No existe información en esta consulta.
+		          	</th>
+					<th>
+					</th>
+					<th>
+					</th>
+					<th>
+					</th>
+					<th>
+					</th>
+					<th>
+					</th>
+					<th>
+					</th>
+					<th>
+				</th>
+
+	          	</tr>
           	@endif
 				</tbody>
 			</table>

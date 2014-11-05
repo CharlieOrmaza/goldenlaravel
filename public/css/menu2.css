@@ -1,49 +1,57 @@
 #menu-bar {
   width: 100%;
   margin: 0px 0px 0px 0px;
-  padding: 5px 6px 6px 6px;
-  height: 60px;
+  padding: 6px 6px 4px 22px;
+  height: 40px;
   line-height: 100%;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  box-shadow: 2px 2px 3px #666666;
-  -webkit-box-shadow: 2px 2px 3px #666666;
-  -moz-box-shadow: 2px 2px 3px #666666;
-  background: #212121;
-  border: solid 1px #333333;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  box-shadow: 2px 2px 3px #292929;
+  -webkit-box-shadow: 2px 2px 3px #292929;
+  -moz-box-shadow: 2px 2px 3px #292929;
+  background: #F2F2F2;
+  background: linear-gradient(top,  #dff0d8,  #FFFFFF);
+  background: -ms-linear-gradient(top,  #dff0d8,  ##FFFFFF);
+  background: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#FFFFFF));
+  background: -moz-linear-gradient(top, #dff0d8,  #FFFFFF);
+  border: solid 1px #F0F0F0;
   position:relative;
   z-index:999;
 }
 #menu-bar li {
-  margin: 0px 0px 6px 0px;
-  padding: 14px 6px 14px 6px;
+  margin: 0px 0px 4px 0px;
+  padding: 0px 7px 4px 25px;
   float: left;
   position: relative;
   list-style: none;
 }
 #menu-bar a {
   font-weight: bold;
-  font-family: arial;
+  font-family: 'trebuchet ms';
   font-style: normal;
-  font-size: 15px;
-  color: #BAB9B9;
+  font-size: 12px;
+  color: #000000;
   text-decoration: none;
   display: block;
   padding: 6px 20px 6px 20px;
   margin: 0;
-  margin-bottom: 6px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  text-shadow: 2px 2px 3px #616161;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  text-shadow: 2px 2px 5px #FFFFFF;
 }
 #menu-bar li ul li a {
   margin: 0;
 }
 #menu-bar .active a, #menu-bar li:hover > a {
-  background: #E6E6E6;
-  color: #444444;
+  background: #0399D4;
+  background: linear-gradient(top,  #FFFFFF,  #FFFFFF);
+  background: -ms-linear-gradient(top,  #FFFFFF,  #FFFFFF);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF));
+  background: -moz-linear-gradient(top,  #FFFFFF,  #FFFFFF);
+  color: #443F40;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
@@ -58,7 +66,11 @@
   -moz-box-shadow: none;
 }
 #menu-bar ul a:hover {
-  background: #474747 !important;
+  background: #9C9EA1 !important;
+  background: linear-gradient(top,  #13EC30,  #1BA832) !important;
+  background: -ms-linear-gradient(top,  #13EC30,  #1BA832) !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#13EC30), to(#1BA832)) !important;
+  background: -moz-linear-gradient(top,  #13EC30,  #1BA832) !important;
   color: #FFFFFF !important;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -66,21 +78,25 @@
   text-shadow: 2px 2px 3px #FFFFFF;
 }
 #menu-bar ul {
-  background: #212121;
+  background: #7D7D7D;
+  background: linear-gradient(top,  #FFFFFF,  #EDEDED);
+  background: -ms-linear-gradient(top,  #FFFFFF,  #EDEDED);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EDEDED));
+  background: -moz-linear-gradient(top,  #FFFFFF,  #EDEDED);
   display: none;
   margin: 0;
   padding: 0;
   width: 185px;
   position: absolute;
-  top: 60px;
+  top: 33px;
   left: 0;
   border: solid 1px #B4B4B4;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 3px #828282;
-  -moz-box-shadow: 2px 2px 3px #828282;
-  box-shadow: 2px 2px 3px #828282;
+  -webkit-box-shadow: 2px 2px 3px #222222;
+  -moz-box-shadow: 2px 2px 3px #222222;
+  box-shadow: 2px 2px 3px #222222;
 }
 #menu-bar li:hover > ul {
   display: block;
@@ -92,12 +108,12 @@
 }
 #menu-bar ul a {
   padding:10px 0px 10px 15px;
-  color:#DBDBDB !important;
+  color:#000000 !important;
   font-size:12px;
   font-style:normal;
   font-family:arial;
   font-weight: normal;
-  text-shadow: 2px 2px 3px #BFBFBF;
+  text-shadow: 2px 2px 3px #FFFFFF;
 }
 #menu-bar ul li:first-child > a {
   border-top-left-radius: 10px;
@@ -132,3 +148,4 @@
 * html #menu-bar {
   height: 1%;
 }
+

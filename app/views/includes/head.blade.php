@@ -34,11 +34,16 @@
 
 <style>
 	body {
+		width: 100%;
+		margin: 0px auto;
+		background: rgba(255,255,255,0.05);
+	}
+	.main {
 		width: 80%;
 		margin: 20px auto;
-		background: rgba(255,255,255,0.1);
+		background: rgba(255,255,255,0.0);
 	}
-	body h1{
+	.main h1{
 		color: white;
 	}
 	.badge {

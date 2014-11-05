@@ -1,6 +1,5 @@
 @extends('layouts.default')
 @section('content')
-@include ('includes.menu')
 	
 	<h1>GoldenTour</h1>
 

@@ -1,6 +1,5 @@
 @extends('layouts.default')
 @section('content')
-@include ('includes.menu')
 
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/bootstrap.js"></script>

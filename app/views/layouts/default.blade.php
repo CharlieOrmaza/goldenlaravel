@@ -5,7 +5,8 @@
   @include ('includes.head')
 </head>
 <body>
-<div id="main" class="row">
+  @include ('includes.menu')
+<div class="main">
 	@yield('content')
 </div>
 <footer class="row">
