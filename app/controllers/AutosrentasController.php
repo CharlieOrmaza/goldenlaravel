@@ -16,13 +16,13 @@ class AutosrentasController extends \BaseController {
 			$papeleta->save();
 			$reservacion = new Reservation;
 			$reservacion->papeleta= $noPapeleta;
-			$reservacion->tipo = 'Autobus';
+			$reservacion->tipo = 'RentadeAutos';
 			$reservacion->estado = 'Activa';
 			if ($reservacion->save()) {
 				$autosrentas = new Autosrenta;
 				$autosrentas->papeleta = $noPapeleta;
 				$autosrentas->save();
-				return Redirect::to('autobuses/edit/'.$noPapeleta);
+				return Redirect::to('Autosrentas/edit/'.$noPapeleta);
 			}else {
 				Session::flash('message','Ha ocurrido un error!');
 				Session::flash('class','danger');
@@ -59,9 +59,11 @@ class AutosrentasController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($papeleta)
 	{
-		//
+	 	 $autosrentas =   DB::table('autosrentas')->where('papeleta', $papeleta)->first();
+         $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
+	  	 return View::make('Autosrentas.show')->with('autosrentas',$autosrentas)->with('reservacion',$reservacion);	
 	}
 
 	/**
@@ -71,9 +73,13 @@ class AutosrentasController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($papeleta)
 	{
-		//
+			 $autosrentas = DB::table('autosrentas')->where('papeleta', $papeleta)->first();
+             $reservacion = DB::table('reservations')->where('papeleta', $papeleta)->first();
+		     Session::put('papeleta', $papeleta);
+		     return View::make('Autosrentas.edit')->with('autosrentas',$autosrentas)->with('reservacion',$reservacion);
+
 	}
 
 	/**
@@ -85,7 +91,39 @@ class AutosrentasController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+			$autosrentas = Autosrenta::find($id);
+			$autosrentas->operador = Input::get('ope');
+			$autosrentas->arrendadora = Input::get('arrendadora');
+			$autosrentas->tipoDeAuto = Input::get('tipoDeAuto');
+			$autosrentas->fechaEntraga = Input::get('fechaEntraga');
+			$autosrentas->fechaDevolucion = Input::get('fechaDevolucion');
+			$autosrentas->LugaryhoraDeEntrega = Input::get('LugaryhoraDeEntrega');
+			$autosrentas->LugaryhoraDeDevolucion = Input::get('LugaryhoraDeDevolucion');
+			$autosrentas->claveOperador = Input::get('claveOperador');
+			$autosrentas->claveArrendadora = Input::get('claveArrendadora');
+			$noPapeleta=$autosrentas->papeleta;
+			 $reservacion = Reservation::where('papeleta', $noPapeleta)->first();
+            $reservacion->destino = Input::get('des');
+		    $reservacion->operador = Input::get('ope');
+		    $reservacion->tipo = 'RentadeAutos';
+			$reservacion->estado = 'Activa';
+			$reservacion->costoPax = Input::get('costoP');
+			$reservacion->costoNeto = Input::get('costoN');
+			$reservacion->observacionesPax = Input::get('obPax');
+			$reservacion->observacionesAgencia = Input::get('obAg');
+			$reservacion->tiempoLimite= Input::get('tmLim');
+ 	        if ($autosrentas->save()) {
+	    	$reservacion->save();
+				Session::flash('message','Actualizado correctamente!');
+				Session::flash('class','success');
+	    	} else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+	    	}
+
+             return Redirect::to('Autosrentas/edit/'.$noPapeleta);
+           
+		
 	}
 
 	/**
