@@ -25,7 +25,18 @@ class UsersController extends BaseController {
 	 */
 	public function create()
 	{
-		//
+			$users = new User;
+			$users->name = Input::get('name');
+			$users->password = Input::get('password');
+			$users->privileges = Input::get('privileges');
+			$id=$users->id;
+			if ($users->save()) {
+				return Redirect::to('users/edit/'.$id);
+			}else {
+				Session::flash('message','Ha ocurrido un error!');
+				Session::flash('class','danger');
+				return Redirect::to('consultas');
+			}
 	}
 
 	/**
@@ -76,7 +87,7 @@ class UsersController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		
 	}
 
 	/**

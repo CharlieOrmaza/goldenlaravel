@@ -32,7 +32,10 @@ App::after(function($request, $response)
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
+Route::filter('checkAdmin', function()
+{
 
+}	
 Route::filter('auth', function()
 {
 	if (Auth::guest())

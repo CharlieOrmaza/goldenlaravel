@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::group(array('before' => 'auth'), function()
 {
 
@@ -31,6 +33,11 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('autobuses/destroy/{id}','AutobusesController@destroy');
 	Route::resource('autobuses', 'AutobusesController');
 
+Route::group(array('before' => 'checkAdmin'), function()
+{
+
+
+});
     Route::post('circuitos/update/{id}','CircuitosController@update');
 	Route::post('circuitos/store','CircuitosController@store');
 	Route::get('circuitos/show/{id}','CircuitosController@show');
