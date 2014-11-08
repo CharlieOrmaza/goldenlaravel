@@ -2,6 +2,10 @@
 @extends('layouts.defaultIndex')
 @include ('includes.menu')
 @section('content')
+  @if(Session::has('message'))
+    <center> 	
+	<div class="alert alert-{{ Session::get('class') }}" > <h3> <font color="white"> {{ Session::get('message')}} </font> </div>
+ @endif  
 
 <div id="content">
   <table width="100%" height="80%" border="0" cellspacing="0" cellpadding="0">
@@ -12,8 +16,6 @@
   </table>
 </div>
 
-@if(Session::has('message'))
-	<div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
-@endif
+
 
 

@@ -35,7 +35,8 @@ App::after(function($request, $response)
 Route::filter('checkAdmin', function()
 {
 	if(Auth::user()->privileges!=="Administrator") {
-        return 'No eres Admin';
+        Session::flash('message','Acceso denegado');
+        return View::make('index');
 	}
 });
 

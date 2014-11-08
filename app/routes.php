@@ -33,18 +33,13 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('autobuses/destroy/{id}','AutobusesController@destroy');
 	Route::resource('autobuses', 'AutobusesController');
 
-Route::group(array('before' => 'checkAdmin'), function()
-{
-
-
-});
-    Route::post('circuitos/update/{id}','CircuitosController@update');
+	Route::post('circuitos/update/{id}','CircuitosController@update');
 	Route::post('circuitos/store','CircuitosController@store');
 	Route::get('circuitos/show/{id}','CircuitosController@show');
 	Route::get('circuitos/edit/{id}','CircuitosController@edit');
 	Route::get('circuitos/destroy/{id}','CircuitosController@destroy');
 	Route::resource('circuitos', 'CircuitosController');
-
+   
     Route::post('cruceros/update/{id}','CrucerosController@update');
 	Route::post('cruceros/store','CrucerosController@store');
 	Route::get('cruceros/show/{id}','CrucerosController@show');
@@ -73,13 +68,16 @@ Route::group(array('before' => 'checkAdmin'), function()
 	Route::get('tours/destroy/{id}','ToursController@destroy');
 	Route::resource('tours', 'ToursController');
 
+Route::group(array('before' => 'checkAdmin'), function()
+{
 	Route::post('hoteles/update/{id}','HotelsController@update');
 	Route::post('hoteles/store','HotelsController@store');
 	Route::get('hoteles/show/{id}','HotelsController@show');
 	Route::get('hoteles/edit/{id}','HotelsController@edit');
 	Route::get('hoteles/destroy/{id}','HotelsController@destroy');
 	Route::resource('hoteles', 'HotelsController');
-
+});
+ 
 	Route::post('aviones/update/{id}','PlanesController@update');
 	Route::post('aviones/store','PlanesController@store');
 	Route::get('aviones/show/{id}','PlanesController@show');
