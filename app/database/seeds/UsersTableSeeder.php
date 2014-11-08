@@ -15,6 +15,11 @@ class UsersTableSeeder extends Seeder {
             'password' => Hash::make('admin'),
             'privileges' => ('Administrator')
 			));
+		User::create(array(
+            'name' => 'user',
+            'password' => Hash::make('user'),
+            'privileges' => ('Usuario')
+			));
 	}
 
 }
