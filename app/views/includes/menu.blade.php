@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
 <div id="menu">
-=======
-<div id="menu" >
->>>>>>> origin/master
   <ul id="menu-bar">
    <li>
       <img src="/img/logo/logoPrueba.png" height="35px" width="100px"></img>
