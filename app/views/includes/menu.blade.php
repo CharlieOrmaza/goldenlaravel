@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 
 <div id="menu">
+=======
+<div id="menu" >
+>>>>>>> origin/master
   <ul id="menu-bar">
-   <li class="active"><a href="/">Inicio</a></li>
+   <li>
+      <img src="/img/logo/logoPrueba.png" height="35px" width="100px"></img>
+    </li>
+   <li ><a href="/">Inicio</a></li>
    <li><a href="#">Nueva Reservaciones</a>
     <ul>
      <li><a href="/hoteles">Hotel</a></li>
@@ -11,7 +18,7 @@
      <li><a href="/tours">Tours</a></li>
      <li><a href="/cruceros">Crucero</a></li>
      <li><a href="/traslados">Traslados</a></li>
-     <li><a href="/rentaAutos">Renta de Autos</a></li>
+     <li><a href="/Autosrentas">Renta de Autos</a></li>
      <li><a href="/rentadeUnidades">Renta de Transporte</a></li>
     </ul>
    </li>

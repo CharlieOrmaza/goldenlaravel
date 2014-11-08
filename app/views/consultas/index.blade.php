@@ -49,6 +49,8 @@
 								<?php $miTipo ='rentadeUnidades'; ?>
 							@elseif($consulta->tipo =='Tour')
 								<?php $miTipo ='tours'; ?>
+							@elseif($consulta->tipo =='RentadeAutos')
+								<?php $miTipo ='Autosrentas'; ?>
 							@elseif($consulta->tipo =='Traslados')
 								<?php $miTipo ='traslados'; ?>
 							@endif

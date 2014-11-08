@@ -34,8 +34,11 @@ App::after(function($request, $response)
 */
 Route::filter('checkAdmin', function()
 {
+	if(Auth::user()->privileges!=="Administrator") {
+        return 'No eres Admin';
+	}
+});
 
-}	
 Route::filter('auth', function()
 {
 	if (Auth::guest())

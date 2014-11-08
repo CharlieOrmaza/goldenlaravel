@@ -1,5 +1,5 @@
 <?php
 
-class Arentum extends \Eloquent {
+class Arenta extends \Eloquent {
 	protected $fillable = [];
 }
